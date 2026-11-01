@@ -1,4 +1,5 @@
 import { MARK_PATH } from "./Logo";
+import { site } from "@/lib/config";
 
 /** A sample certificate, drawn in code. Always labelled as a sample so nobody mistakes it for a real one. */
 export function CertificateArt({ course = "Course name", className = "" }: { course?: string; className?: string }) {
@@ -7,6 +8,13 @@ export function CertificateArt({ course = "Course name", className = "" }: { cou
       <rect x="8" y="8" width="464" height="324" className="fill-paper stroke-ink" strokeWidth="2" />
       <rect x="22" y="22" width="436" height="296" className="fill-none stroke-olive" strokeWidth="1.2" />
       <rect x="28" y="28" width="424" height="284" className="fill-none stroke-olive" strokeWidth="0.6" strokeDasharray="3 4" />
+
+      <text x="44" y="50" className="fill-muted font-mono" fontSize="7.5" letterSpacing="1">
+        ID  KTF-2026-A7K3PQ
+      </text>
+      <text x="436" y="50" textAnchor="end" className="fill-muted font-mono" fontSize="7.5" letterSpacing="1">
+        {site.domain}/verify
+      </text>
 
       {/* mark */}
       <g transform="translate(222 42) scale(0.0283) translate(-70 -70)">

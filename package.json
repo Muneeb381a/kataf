@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "db:push": "drizzle-kit push"
+    "db:push": "drizzle-kit push",
+    "cert:issue": "node --env-file-if-exists=.env.local scripts/certificates.mjs issue",
+    "cert:list": "node --env-file-if-exists=.env.local scripts/certificates.mjs list",
+    "cert:revoke": "node --env-file-if-exists=.env.local scripts/certificates.mjs revoke"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.4",

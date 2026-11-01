@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import { Edge } from "@/components/ui/Edge";
 import { RevealWords } from "@/components/ui/RevealWords";
 import { Wheat } from "@/components/ui/Wheat";
 import { whatsappDisplay, whatsappLink } from "@/lib/config";
@@ -6,6 +7,7 @@ import { whatsappDisplay, whatsappLink } from "@/lib/config";
 export function CtaBand() {
   return (
     <section className="on-dark relative overflow-hidden bg-olive-deep text-paper">
+      <Edge className="text-ink" />
       <Wheat className="pointer-events-none absolute -right-6 -top-10 hidden h-[520px] rotate-[18deg] text-paper/10 md:block" />
       <Wheat className="pointer-events-none absolute right-[22%] -bottom-24 hidden h-[420px] -rotate-[12deg] text-paper/10 md:block" />
       <div className="wrap relative flex flex-col gap-10 py-20 md:py-32">

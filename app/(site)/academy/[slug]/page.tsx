@@ -38,7 +38,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     ...c.faqs,
     {
       q: "Do I get a certificate?",
-      a: "Yes. When you complete the course and its final project, you receive a Kataf Academy certificate with your name and the course.",
+      a: "Yes. When you complete the course and its final project, you receive a Kataf Academy certificate with your name, the course and a unique ID. Anyone can check that ID at /verify.",
     },
     {
       q: c.internship ? "Is there an internship after the course?" : "Is there an internship for this course?",
@@ -198,9 +198,12 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
               <div>
                 <h2 className="h3 !text-[32px]">A certificate you earned.</h2>
                 <p className="mt-4 text-muted">
-                  Finish every module and the final project, and you receive a Kataf Academy certificate with your name and
-                  the course. It is awarded for completion, not for attendance.
+                  Finish every module and the final project, and you receive a Kataf Academy certificate with your name, the course and a
+                  unique ID. It is awarded for completion, not for attendance.
                 </p>
+                <Link href="/verify" className="link-quiet mt-5 inline-block font-medium text-olive">
+                  Anyone can verify it online →
+                </Link>
               </div>
             </div>
           </section>

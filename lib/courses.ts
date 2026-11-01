@@ -226,7 +226,7 @@ export const courses: Course[] = [
       "Students, freelancers and business owners who want to use AI properly in their work, and learners with some coding who want to build AI features into real products.",
     prerequisite: "The tools and prompting modules need no experience. The building modules assume basic programming.",
     level: "All levels",
-    internship: false,
+    internship: true,
     outcomes: [
       "Write prompts that give reliable results.",
       "Automate repeated tasks with AI and no-code tools.",

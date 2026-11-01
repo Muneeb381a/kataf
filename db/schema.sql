@@ -22,3 +22,13 @@ CREATE TABLE IF NOT EXISTS applications (
   source_page TEXT,
   created_at TIMESTAMPTZ DEFAULT now()
 );
+
+CREATE TABLE IF NOT EXISTS certificates (
+  id SERIAL PRIMARY KEY,
+  code TEXT NOT NULL UNIQUE,
+  student_name TEXT NOT NULL,
+  course TEXT NOT NULL,
+  issued_on DATE NOT NULL DEFAULT CURRENT_DATE,
+  revoked BOOLEAN NOT NULL DEFAULT FALSE,
+  created_at TIMESTAMPTZ DEFAULT now()
+);

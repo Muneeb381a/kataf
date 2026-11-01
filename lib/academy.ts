@@ -6,11 +6,11 @@ export const includes = [
   },
   {
     t: "Certificate on completion",
-    d: "When you finish the course and its final project, you receive a Kataf Academy certificate with your name and course.",
+    d: "When you finish the course and its final project, you receive a Kataf Academy certificate with a unique ID. Anyone can check it online.",
   },
   {
     t: "Internship",
-    d: "Where the skill allows it, you can move on to an internship and work on real projects with our team.",
+    d: "After the course, you move on to an internship and work on real projects with our team.",
   },
   {
     t: "A portfolio you can show",
@@ -20,7 +20,7 @@ export const includes = [
 
 export const internshipSteps = [
   { t: "Finish the course", d: "Complete every module and the final project." },
-  { t: "Get your certificate", d: "Awarded on completion, with your name and course." },
+  { t: "Get your certificate", d: "Awarded on completion, with a unique ID you can verify online." },
   { t: "Start the internship", d: "Work on real tasks alongside the team. Dates and terms are explained at admission." },
   { t: "Leave with experience", d: "Real work you can describe in an interview or put in your portfolio." },
 ];

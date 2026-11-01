@@ -8,7 +8,7 @@ const assurances = ["Software for business", "Courses in code, design, AI and ma
 
 export function Hero() {
   return (
-    <section className="relative overflow-x-clip border-b border-line">
+    <section className="ledger relative overflow-x-clip border-b border-line">
       {/* harvest motif */}
       <Wheat delay={0.5} className="pointer-events-none absolute -bottom-10 left-[44%] hidden h-[640px] rotate-[14deg] text-olive/45 lg:block" />
       <Wheat
@@ -73,6 +73,12 @@ export function Hero() {
             </p>
             <p style={{ "--d": "1.45s" } as React.CSSProperties} className="pop label absolute -bottom-3 left-[6%] z-10 hidden -rotate-2 rounded bg-olive px-3 py-1.5 text-paper lg:block">
               Udhaar per customer
+            </p>
+            <p
+              style={{ "--d": "1.7s" } as React.CSSProperties}
+              className="pop absolute -right-1 bottom-[-18px] z-10 hidden rounded border border-ink bg-paper px-3 py-2 font-mono text-[11px] uppercase tracking-[0.08em] shadow-[3px_3px_0_#14130F] lg:block"
+            >
+              <span className="text-olive">✓</span> Certificate verified
             </p>
           </div>
         </div>

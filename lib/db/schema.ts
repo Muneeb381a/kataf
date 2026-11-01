@@ -1,4 +1,4 @@
-import { pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
+import { boolean, date, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
 
 export const leads = pgTable("leads", {
   id: serial("id").primaryKey(),
@@ -21,5 +21,15 @@ export const applications = pgTable("applications", {
   background: text("background"),
   message: text("message"),
   sourcePage: text("source_page"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
+export const certificates = pgTable("certificates", {
+  id: serial("id").primaryKey(),
+  code: text("code").notNull().unique(),
+  studentName: text("student_name").notNull(),
+  course: text("course").notNull(),
+  issuedOn: date("issued_on").notNull().defaultNow(),
+  revoked: boolean("revoked").notNull().default(false),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 });

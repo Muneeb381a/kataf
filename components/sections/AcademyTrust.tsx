@@ -5,6 +5,7 @@ import { site, whatsappDisplay, whatsappLink } from "@/lib/config";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Reveal } from "@/components/ui/Reveal";
 import { Wheat } from "@/components/ui/Wheat";
+import { VerifyForm } from "@/components/sections/VerifyForm";
 import { CertificateArt } from "@/components/ui/CertificateArt";
 
 /** What every course includes: certificate, internship, and a visible, honest admission path. */
@@ -41,6 +42,18 @@ export function Includes() {
             <li className="border-t border-ink" aria-hidden="true" />
           </ol>
         </div>
+
+        <div className="mt-14 grid gap-6 border-y border-ink py-8 lg:grid-cols-12 lg:items-end lg:gap-x-6">
+          <div className="lg:col-span-5">
+            <p className="label text-olive">Check any certificate</p>
+            <p className="mt-2 font-serif text-[26px] leading-tight tracking-[-0.02em]">
+              Every certificate has an ID. Anyone can verify it online.
+            </p>
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7">
+            <VerifyForm />
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -54,8 +67,7 @@ export function InternshipPath() {
         <p className="label mb-5 text-olive-tint">03 / Internship</p>
         <h2 className="h2 max-w-[18ch]">Learn it. Then do it for real.</h2>
         <p className="mt-6 max-w-[52ch] text-paper/70">
-          Kataf is a working software house, so after the course you can work on real projects with the team, in
-          the skills where that is possible. We explain the dates and terms at admission.
+          Kataf is a working software house, so after every course you can work on real projects with the team. We explain the dates and terms at admission, before you pay.
         </p>
         <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {internshipSteps.map((s, i) => (
@@ -66,9 +78,7 @@ export function InternshipPath() {
             </li>
           ))}
         </ol>
-        <p className="label mt-12 text-paper/60">
-          Internship is offered in: {courses.filter((c) => c.internship).map((c) => c.name).join(" · ")}
-        </p>
+        <p className="label mt-12 text-paper/60">Internship is part of every course: {courses.map((c) => c.name).join(" · ")}</p>
       </div>
     </section>
   );

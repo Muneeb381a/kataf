@@ -6,7 +6,7 @@ import { Wordmark } from "@/components/ui/Logo";
 
 export function Footer() {
   return (
-    <footer className="on-dark bg-ink text-paper">
+    <footer className="on-dark relative bg-ink text-paper">
       <div className="wrap grid gap-12 pb-10 pt-20 md:grid-cols-12">
         <div className="md:col-span-3">
           <Wordmark className="text-paper" markClassName="text-olive-tint" />
@@ -31,6 +31,7 @@ export function Footer() {
             </Link>
           ))}
           <Link href="/apply">Apply now</Link>
+          <Link href="/verify">Verify a certificate</Link>
         </FooterCol>
 
         <FooterCol title="Company" className="md:col-span-2">

@@ -8,11 +8,11 @@ export function ipOf(req: Request) {
   return req.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
 }
 
-export function limited(bucket: string, ip: string) {
+export function limited(bucket: string, ip: string, max = MAX) {
   const key = `${bucket}:${ip}`;
   const now = Date.now();
   const recent = (hits.get(key) ?? []).filter((t) => now - t < WINDOW_MS);
-  if (recent.length >= MAX) {
+  if (recent.length >= max) {
     hits.set(key, recent);
     return true;
   }

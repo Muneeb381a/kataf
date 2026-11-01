@@ -5,7 +5,7 @@ import { courses } from "@/lib/courses";
 import { getAllWork } from "@/lib/work";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ["", "/products", "/services", "/academy", "/apply", "/work", "/about", "/contact"];
+  const staticPaths = ["", "/products", "/services", "/academy", "/apply", "/verify", "/work", "/about", "/contact"];
   return [
     ...staticPaths.map((p) => ({ url: `${siteUrl}${p}`, priority: p === "" ? 1 : 0.7 })),
     ...products.map((p) => ({ url: `${siteUrl}/products/${p.slug}`, priority: 0.9 })),

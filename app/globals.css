@@ -120,6 +120,12 @@
     border: 1px solid var(--color-line);
     border-radius: 4px;
   }
+  /* ledger paper: faint ruled lines and a margin, for "hisaab ek jagah" */
+  .ledger {
+    background-image:
+      linear-gradient(to right, transparent 47px, rgba(47, 74, 43, 0.22) 47px 48px, transparent 48px),
+      repeating-linear-gradient(to bottom, transparent 0 35px, rgba(210, 205, 186, 0.6) 35px 36px);
+  }
   .link-quiet {
     text-decoration: underline;
     text-decoration-color: var(--color-line);

@@ -11,6 +11,7 @@ import { CourseCards } from "@/components/sections/CourseCards";
 import { RevealWords } from "@/components/ui/RevealWords";
 import { Button } from "@/components/ui/Button";
 import { GrownWithCare } from "@/components/sections/GrownWithCare";
+import { Edge } from "@/components/ui/Edge";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { products } from "@/lib/products";
 
@@ -47,7 +48,8 @@ export default function Home() {
 
       <Process />
       <CustomSplit />
-      <section className="section bg-paper-2">
+      <section className="section relative bg-paper-2">
+        <Edge className="text-paper" />
         <div className="wrap">
           <SectionLabel num="04">Academy</SectionLabel>
           <div className="mb-12 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
@@ -57,6 +59,16 @@ export default function Home() {
             </Button>
           </div>
           <CourseCards />
+          <ul className="label mt-10 flex flex-wrap gap-x-8 gap-y-2 border-t border-ink pt-5 text-muted">
+            {["Certificate with an ID anyone can verify", "Internship in every course", "Fee shared in writing"].map((b) => (
+              <li key={b} className="flex items-center gap-2">
+                <span className="text-olive" aria-hidden="true">
+                  ✓
+                </span>
+                {b}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

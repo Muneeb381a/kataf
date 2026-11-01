@@ -82,7 +82,7 @@ export default function AcademyPage() {
             </TextLink>
           </div>
           <ul className="label mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-5 text-muted">
-            {["Certificate on completion", "Internship opportunity", "Real projects", "Fee shared in writing"].map((b) => (
+            {["Verifiable certificate", "Internship in every course", "Real projects", "Fee in writing"].map((b) => (
               <li key={b} className="flex items-center gap-2">
                 <span className="text-olive" aria-hidden="true">✓</span>
                 {b}
