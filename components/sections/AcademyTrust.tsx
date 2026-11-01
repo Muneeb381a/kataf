@@ -1,11 +1,14 @@
 import Link from "next/link";
-import { admission, includes, internshipSteps } from "@/lib/academy";
+import { admission, includes, internshipGets, internshipQualify, internshipRoles, internshipSteps } from "@/lib/academy";
 import { courses } from "@/lib/courses";
 import { site, whatsappDisplay, whatsappLink } from "@/lib/config";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Reveal } from "@/components/ui/Reveal";
 import { Wheat } from "@/components/ui/Wheat";
 import { VerifyForm } from "@/components/sections/VerifyForm";
+import { InternshipExplorer } from "@/components/sections/InternshipExplorer";
+import { InternshipRoadmap } from "@/components/sections/InternshipRoadmap";
+import { Button } from "@/components/ui/Button";
 import { CertificateArt } from "@/components/ui/CertificateArt";
 
 /** What every course includes: certificate, internship, and a visible, honest admission path. */
@@ -60,25 +63,59 @@ export function Includes() {
 }
 
 export function InternshipPath() {
+  const roles = courses.map((c) => ({ slug: c.slug, name: c.name, ...internshipRoles[c.slug] }));
   return (
-    <section id="internship" className="on-dark relative overflow-hidden bg-ink py-16 text-paper md:py-28">
-      <Wheat className="pointer-events-none absolute -right-4 -top-10 hidden h-[520px] rotate-[14deg] text-olive-tint/20 lg:block" />
+    <section id="internship" className="on-dark relative overflow-hidden bg-ink py-20 text-paper md:py-32">
+      <Wheat className="pointer-events-none absolute -right-4 -top-10 hidden h-[520px] rotate-[14deg] text-wheat/15 lg:block" />
       <div className="wrap relative">
-        <p className="label mb-5 text-olive-tint">03 / Internship</p>
-        <h2 className="h2 max-w-[18ch]">Learn it. Then do it for real.</h2>
-        <p className="mt-6 max-w-[52ch] text-paper/70">
-          Kataf is a working software house, so after every course you can work on real projects with the team. We explain the dates and terms at admission, before you pay.
+        <p className="label mb-5 text-wheat">03 / Internship</p>
+        <h2 className="h2 max-w-[18ch]">
+          Learn it. Then do it for <span className="italic text-wheat">real</span>.
+        </h2>
+        <p className="mt-6 max-w-[54ch] text-paper/70">
+          Kataf is a working software house, so an internship follows every course. You work alongside the team on real
+          tasks, with feedback, and leave with experience you can describe in an interview.
         </p>
-        <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {internshipSteps.map((s, i) => (
-            <li key={s.t} className="relative border-t-2 border-olive-tint pt-5">
-              <span className="label text-olive-tint">Step 0{i + 1}</span>
-              <h3 className="h3 mt-2">{s.t}</h3>
-              <p className="mt-2 text-paper/70">{s.d}</p>
-            </li>
-          ))}
-        </ol>
-        <p className="label mt-12 text-paper/60">Internship is part of every course: {courses.map((c) => c.name).join(" · ")}</p>
+
+        <InternshipRoadmap steps={internshipSteps} />
+
+        <div className="mt-24">
+          <p className="label text-wheat">What you could work on</p>
+          <h3 className="h3 mb-8 mt-2 !text-[32px] md:!text-[40px]">Pick a course. See the role that follows.</h3>
+          <InternshipExplorer roles={roles} />
+        </div>
+
+        <div className="mt-24 grid gap-12 border-t border-paper/25 pt-12 lg:grid-cols-2 lg:gap-x-10">
+          <div>
+            <p className="label text-wheat">What you get</p>
+            <ul className="mt-5">
+              {internshipGets.map((g) => (
+                <li key={g} className="flex gap-4 border-b border-paper/20 py-3.5">
+                  <span aria-hidden="true" className="text-wheat">
+                    ✓
+                  </span>
+                  {g}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="label text-wheat">How you qualify</p>
+            <ol className="mt-5">
+              {internshipQualify.map((q, i) => (
+                <li key={q} className="grid grid-cols-[2.5rem_1fr] border-b border-paper/20 py-3.5">
+                  <span className="label pt-1 text-wheat">0{i + 1}</span>
+                  {q}
+                </li>
+              ))}
+            </ol>
+            <div className="mt-8">
+              <Button href="/apply" variant="paper">
+                Apply now
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

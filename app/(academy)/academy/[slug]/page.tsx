@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { commonCourseFaqs, courses, getCourse } from "@/lib/courses";
-import { internshipSteps } from "@/lib/academy";
+import { internshipRoles, internshipSteps } from "@/lib/academy";
 import { siteUrl, whatsappLink } from "@/lib/config";
 import { Button, TextLink } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -48,6 +48,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     },
     ...commonCourseFaqs,
   ];
+  const role = internshipRoles[c.slug];
   const idx = courses.findIndex((x) => x.slug === c.slug);
   const next = courses[(idx + 1) % courses.length];
 
@@ -210,33 +211,37 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
           {/* Internship */}
           <section>
-            <SectionLabel num="05">{c.internship ? "Internship" : "After the course"}</SectionLabel>
-            {c.internship ? (
-              <>
-                <h2 className="h2 mb-4 max-w-[16ch]">Then work on the real thing.</h2>
-                <p className="mb-10 max-w-[50ch] text-muted">
-                  Kataf is a working software house, so after the course you can work on real projects with our team. We
-                  explain the dates and terms at admission, before you pay.
-                </p>
-                <ol className="grid gap-6 sm:grid-cols-2">
-                  {internshipSteps.map((s, i) => (
-                    <li key={s.t} className="border-t-2 border-olive pt-4">
-                      <span className="label text-olive">Step 0{i + 1}</span>
-                      <h3 className="h3 mt-1">{s.t}</h3>
-                      <p className="mt-1 text-muted">{s.d}</p>
-                    </li>
-                  ))}
-                </ol>
-              </>
-            ) : (
-              <>
-                <h2 className="h2 mb-4 max-w-[16ch]">End with a project you can show.</h2>
-                <p className="max-w-[50ch] text-muted">
-                  This course finishes with a project showcase, so you leave with work to show clients or employers. If you
-                  also build skills for one of our internship courses, ask us about it.
-                </p>
-              </>
-            )}
+            <SectionLabel num="05">Internship</SectionLabel>
+            <h2 className="h2 mb-4 max-w-[16ch]">Then work on the real thing.</h2>
+            <p className="mb-10 max-w-[50ch] text-muted">
+              Kataf is a working software house, so an internship follows the course. We explain the dates and terms at
+              admission, before you pay.
+            </p>
+
+            <div className="on-dark relative overflow-hidden rounded border border-ink bg-ink p-6 text-paper md:p-10">
+              <p className="label text-wheat">Your internship role</p>
+              <h3 className="mt-2 font-serif text-[32px] leading-tight tracking-[-0.02em] md:text-[42px]">{role.role}</h3>
+              <p className="mt-2 max-w-[44ch] text-paper/70">{role.summary}</p>
+              <p className="label mb-4 mt-8 text-paper/60">You could work on</p>
+              <ul className="grid gap-5 md:grid-cols-3">
+                {role.tasks.map((t) => (
+                  <li key={t} className="border-t-2 border-wheat pt-3 text-[16px] leading-snug">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <p className="label mt-8 border-t border-paper/20 pt-5 text-paper/60">You practise: {role.practise}</p>
+            </div>
+
+            <ol className="mt-10 grid gap-6 sm:grid-cols-2">
+              {internshipSteps.map((s, i) => (
+                <li key={s.t} className="border-t-2 border-olive pt-4">
+                  <span className="label text-olive">Step 0{i + 1}</span>
+                  <h3 className="h3 mt-1">{s.t}</h3>
+                  <p className="mt-1 text-muted">{s.d}</p>
+                </li>
+              ))}
+            </ol>
           </section>
 
           {/* FAQ */}
