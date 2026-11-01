@@ -2,11 +2,12 @@ import Link from "next/link";
 import type { ButtonHTMLAttributes } from "react";
 import { HandUnderline } from "./HandUnderline";
 
-type Variant = "primary" | "paper";
+type Variant = "primary" | "paper" | "outline";
 
 const styles: Record<Variant, string> = {
   primary: "bg-olive text-paper hover:bg-olive-deep",
   paper: "bg-paper text-ink hover:bg-olive-tint",
+  outline: "border border-ink bg-transparent text-ink hover:bg-ink hover:text-paper",
 };
 
 const base =
