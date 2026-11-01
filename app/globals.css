@@ -139,6 +139,18 @@
     border: 1px solid var(--color-line);
     border-radius: 4px;
   }
+  .stage-wheat {
+    background-color: var(--color-wheat-tint);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='1.2' fill='%23a97a1c' fill-opacity='.3'/%3E%3C/svg%3E");
+    border: 1px solid var(--color-line);
+    border-radius: 4px;
+  }
+  .stage-paper {
+    background-color: var(--color-paper-2);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='1.2' fill='%2314130f' fill-opacity='.18'/%3E%3C/svg%3E");
+    border: 1px solid var(--color-line);
+    border-radius: 4px;
+  }
   /* ledger paper: faint ruled lines and a margin, for "hisaab ek jagah" */
   .ledger {
     background-image:

@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/ui/Marquee";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { ProductChooser } from "@/components/sections/ProductChooser";
 import { ProductRow } from "@/components/sections/ProductRow";
 import { Process } from "@/components/sections/Process";
 import { CustomSplit } from "@/components/sections/CustomSplit";
@@ -20,9 +21,9 @@ export default function Home() {
       <Hero />
       <Marquee
         rows={[
-          { label: "Build", items: ["Printing press", "Installments", "Clinics", "Custom software", "Websites"], tone: "ink" },
+          { label: "We build", items: ["Printing press", "Installments", "Clinics", "Custom software", "Websites"], tone: "ink" },
           {
-            label: "Learn",
+            label: "We teach",
             items: ["Graphic design", "Web development", "Backend", "Full stack", "AI skills", "Digital marketing"],
             style: "mono",
             tone: "academy",
@@ -37,6 +38,7 @@ export default function Home() {
         <div className="wrap">
           <SectionLabel num="01">Products</SectionLabel>
           <RevealWords className="h2 max-w-[16ch]" text="Three products. Three *different* businesses." />
+          <ProductChooser />
           <div className="mt-12 md:mt-16">
             {products.map((p, i) => (
               <ProductRow key={p.slug} product={p} index={i} />

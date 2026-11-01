@@ -31,7 +31,8 @@ export async function Screen({
         height={height}
         sizes={sizes}
         priority={priority}
-        className="block h-auto w-full"
+        className="mx-auto block h-auto w-full"
+        style={width < 700 ? { maxWidth: width } : undefined}
       />
     );
   }

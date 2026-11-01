@@ -46,8 +46,13 @@ export function CustomSplit() {
             </p>
             <div className="mt-8">
               <LaptopFrame>
-                <Screen src="websites/01-sample" label="Sample website" sizes="(min-width: 768px) 460px, 100vw" />
+                <Screen
+                  src="websites/01-sample"
+                  label="Sample custom website for a printing press"
+                  sizes="(min-width: 768px) 520px, 100vw"
+                />
               </LaptopFrame>
+              <p className="label mt-4 text-center text-muted">Sample: a website for a printing press</p>
             </div>
             <Button href="/contact?interest=Custom%20Website" className="mt-10">
               Get a Quote

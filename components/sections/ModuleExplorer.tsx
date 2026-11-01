@@ -43,7 +43,7 @@ export function ModuleExplorer({ modules, url }: { modules: ExplorerModule[]; ur
         </div>
         <div className="col-span-8" id="module-panel" role="tabpanel" aria-labelledby={`tab-${active}`}>
           <p className="label mb-4 text-muted">{url}</p>
-          <div className="overflow-hidden rounded border border-ink shadow-frame">{m.screen}</div>
+          <div className="stage overflow-hidden !rounded border-ink p-0 shadow-frame">{m.screen}</div>
           <ul className="mt-10 grid gap-5 md:grid-cols-3">
             {m.lines.map((l) => (
               <li key={l} className="border-t border-ink pt-3">
@@ -69,7 +69,7 @@ export function ModuleExplorer({ modules, url }: { modules: ExplorerModule[]; ur
               </span>
             </summary>
             <div className="pb-8">
-              <div className="overflow-hidden rounded border border-ink">{mod.screen}</div>
+              <div className="stage overflow-hidden !rounded border-ink">{mod.screen}</div>
               <ul className="mt-5 space-y-3">
                 {mod.lines.map((l) => (
                   <li key={l} className="border-t border-line pt-3">

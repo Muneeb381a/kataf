@@ -26,6 +26,12 @@ export type Product = {
   faqs: { q: string; a: string }[];
   /** form value for "Interested in" */
   interest: string;
+  /** "I run a ..." for the chooser */
+  iRun: string;
+  /** an example of the WhatsApp message this product sends */
+  sample: { label: string; text: string };
+  /** stage colour on the overview rows */
+  stage: "olive" | "wheat" | "paper";
 };
 
 const commonIntegrations = [
@@ -42,6 +48,9 @@ export const products: Product[] = [
     name: "Printing ERP",
     num: "01",
     interest: "Printing ERP",
+    iRun: "I run a printing press",
+    stage: "olive",
+    sample: { label: "Job ready", text: "Your job is ready. Balance due: PKR 4,500. Please collect it today." },
     problem: "Job cards on paper, rates in someone's head, advances in a notebook.",
     outcomes: [
       "Every job, rate and advance on one screen.",
@@ -181,6 +190,9 @@ export const products: Product[] = [
     name: "Installment Manager",
     num: "02",
     interest: "Installment Manager",
+    iRun: "I sell on installments",
+    stage: "wheat",
+    sample: { label: "Due reminder", text: "Reminder: your installment is due tomorrow. Thank you for paying on time." },
     problem: "Udhaar written in registers, recovery chased by memory.",
     outcomes: [
       "Every customer, guarantor and due date in one place.",
@@ -311,6 +323,9 @@ export const products: Product[] = [
     name: "Doctor ERP",
     num: "03",
     interest: "Doctor ERP",
+    iRun: "I run a clinic",
+    stage: "paper",
+    sample: { label: "Appointment", text: "Reminder: your appointment is tomorrow at 10:30 am. See you then." },
     problem: "Patient files in drawers, billing on a calculator.",
     outcomes: [
       "Patient history ready when the patient walks in.",

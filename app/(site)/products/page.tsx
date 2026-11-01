@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { products } from "@/lib/products";
+import { ProductChooser } from "@/components/sections/ProductChooser";
 import { ProductRow } from "@/components/sections/ProductRow";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
@@ -27,9 +28,12 @@ export default function ProductsPage() {
 
       <section className="py-14 md:py-20">
         <div className="wrap">
-          {products.map((p, i) => (
-            <ProductRow key={p.slug} product={p} index={i} />
-          ))}
+          <ProductChooser />
+          <div className="mt-16 md:mt-20">
+            {products.map((p, i) => (
+              <ProductRow key={p.slug} product={p} index={i} />
+            ))}
+          </div>
         </div>
       </section>
 
