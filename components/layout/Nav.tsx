@@ -7,15 +7,33 @@ import { motion, useReducedMotion, useScroll } from "framer-motion";
 import { Wordmark } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 
-const links = [
-  { href: "/products", label: "Products" },
-  { href: "/services", label: "Services" },
-  { href: "/academy", label: "Academy" },
-  { href: "/work", label: "Work" },
-  { href: "/about", label: "About" },
-];
+export type NavVariant = "software" | "academy";
 
-export function Nav() {
+const software = {
+  links: [
+    { href: "/products", label: "Products" },
+    { href: "/services", label: "Services" },
+    { href: "/work", label: "Work" },
+    { href: "/about", label: "About" },
+    { href: "/academy", label: "Academy ↗" },
+  ],
+  cta: { href: "/contact", label: "Get a Quote" },
+  other: null as null | { href: string; label: string },
+};
+
+const academy = {
+  links: [
+    { href: "/academy#courses", label: "Courses" },
+    { href: "/academy#internship", label: "Internship" },
+    { href: "/academy#fees", label: "Fees" },
+    { href: "/verify", label: "Verify certificate" },
+  ],
+  cta: { href: "/apply", label: "Apply now" },
+  other: { href: "/", label: "Software house" },
+};
+
+export function Nav({ variant = "software" }: { variant?: NavVariant }) {
+  const cfg = variant === "academy" ? academy : software;
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -48,13 +66,18 @@ export function Nav() {
       className={`sticky top-0 z-40 bg-paper ${scrolled || open ? "border-b border-line" : "border-b border-transparent"}`}
     >
       <div className="wrap flex h-16 items-center justify-between">
-        <Link href="/" aria-label="Kataf, home" className="text-ink">
+        <Link
+          href={variant === "academy" ? "/academy" : "/"}
+          aria-label={variant === "academy" ? "Kataf Academy, home" : "Kataf, home"}
+          className="flex items-center gap-3 text-ink"
+        >
           <Wordmark />
+          {variant === "academy" && <span className="label rounded bg-olive px-2 py-1 text-paper">Academy</span>}
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-6 lg:gap-9 md:flex">
-          {links.map((l) => {
-            const active = pathname === l.href || pathname.startsWith(l.href + "/");
+        <nav aria-label="Main" className="hidden items-center gap-6 md:flex lg:gap-9">
+          {cfg.links.map((l) => {
+            const active = !l.href.includes("#") && (pathname === l.href || pathname.startsWith(l.href + "/"));
             return (
               <Link
                 key={l.href}
@@ -68,15 +91,14 @@ export function Nav() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href="/apply"
-            className="hidden rounded border border-ink px-4 py-3 text-[16px] font-medium leading-none transition-colors hover:bg-ink hover:text-paper lg:inline-block"
-          >
-            Apply
-          </Link>
-          <Button href="/contact" className="!py-3 !px-5 text-[16px]">
-            Get a Quote
+        <div className="hidden items-center gap-5 md:flex">
+          {cfg.other && (
+            <Link href={cfg.other.href} className="label link-quiet text-muted hover:text-ink">
+              {cfg.other.label} ↗
+            </Link>
+          )}
+          <Button href={cfg.cta.href} className="!px-5 !py-3 text-[16px]">
+            {cfg.cta.label}
           </Button>
         </div>
 
@@ -106,9 +128,12 @@ export function Nav() {
         >
           <nav aria-label="Mobile">
             <ul>
-              {links.map((l, i) => (
+              {cfg.links.map((l, i) => (
                 <li key={l.href} className="border-b border-line">
-                  <Link href={l.href} className="flex items-baseline gap-4 py-5 font-serif text-[40px] leading-none tracking-[-0.02em]">
+                  <Link
+                    href={l.href}
+                    className="flex items-baseline gap-4 py-5 font-serif text-[36px] leading-none tracking-[-0.02em]"
+                  >
                     <span className="label text-olive">0{i + 1}</span>
                     {l.label}
                   </Link>
@@ -117,15 +142,17 @@ export function Nav() {
             </ul>
           </nav>
           <div className="mt-10 grid gap-3">
-            <Button href="/contact" className="w-full justify-between">
-              Get a Quote
+            <Button href={cfg.cta.href} className="w-full justify-between">
+              {cfg.cta.label}
             </Button>
-            <Link
-              href="/apply"
-              className="flex w-full items-center justify-between rounded border border-ink px-6 py-3.5 font-medium leading-none"
-            >
-              Apply to the Academy <span aria-hidden="true">→</span>
-            </Link>
+            {cfg.other && (
+              <Link
+                href={cfg.other.href}
+                className="flex w-full items-center justify-between rounded border border-ink px-6 py-3.5 font-medium leading-none"
+              >
+                {cfg.other.label} <span aria-hidden="true">↗</span>
+              </Link>
+            )}
           </div>
         </div>
       )}

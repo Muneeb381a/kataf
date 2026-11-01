@@ -61,7 +61,7 @@ export function Includes() {
 
 export function InternshipPath() {
   return (
-    <section className="on-dark relative overflow-hidden bg-ink py-16 text-paper md:py-28">
+    <section id="internship" className="on-dark relative overflow-hidden bg-ink py-16 text-paper md:py-28">
       <Wheat className="pointer-events-none absolute -right-4 -top-10 hidden h-[520px] rotate-[14deg] text-olive-tint/20 lg:block" />
       <div className="wrap relative">
         <p className="label mb-5 text-olive-tint">03 / Internship</p>

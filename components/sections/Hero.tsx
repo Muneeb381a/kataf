@@ -3,17 +3,15 @@ import { BrowserFrame } from "@/components/ui/BrowserFrame";
 import { HandUnderline } from "@/components/ui/HandUnderline";
 import { Screen } from "@/components/ui/Screen";
 import { Wheat } from "@/components/ui/Wheat";
-import { CertificateArt } from "@/components/ui/CertificateArt";
 import { CountUp } from "@/components/ui/CountUp";
-import { courses } from "@/lib/courses";
 import { moduleCount, products } from "@/lib/products";
+import { whatsappLink } from "@/lib/config";
 
 const d = (s: string) => ({ "--d": s }) as React.CSSProperties;
 
 const stats = [
   { n: products.length, l: "Ready-made products" },
   { n: moduleCount, l: "Modules inside them" },
-  { n: courses.length, l: "Academy courses" },
 ];
 
 export function Hero() {
@@ -28,7 +26,7 @@ export function Hero() {
       <div className="wrap relative pb-10 pt-10 md:pt-16">
         <p style={d("0s")} className="rise label mb-7 inline-flex items-center gap-3 rounded border border-line bg-paper px-3 py-1.5 text-olive">
           <span className="h-1.5 w-1.5 rounded-full bg-olive" aria-hidden="true" />
-          Software house · Academy · Pakistan
+          Software house · Pakistan
         </p>
 
         <h1
@@ -39,7 +37,7 @@ export function Hero() {
             Software that works the{" "}
             <span className="relative inline-block whitespace-nowrap font-serif italic text-olive">
               way
-              <HandUnderline animated className="-bottom-1 h-[0.15em] md:-bottom-2" />
+              <HandUnderline animated tone="text-wheat" className="-bottom-1 h-[0.15em] md:-bottom-2" />
             </span>
           </span>{" "}
           <span className="lg:block">your business does.</span>
@@ -49,19 +47,20 @@ export function Hero() {
           {/* left: what we do, and the two ways in */}
           <div className="lg:col-span-5 lg:pt-4">
             <p style={d(".22s")} className="rise max-w-[40ch] text-[18px] leading-relaxed text-muted md:text-[20px]">
-              We build Printing ERP, Installment Manager, Doctor ERP and custom software for Pakistani businesses, and teach
-              design, code, AI and marketing at Kataf Academy.
+              Printing ERP, Installment Manager, Doctor ERP and custom software, built in Pakistan for the presses, shops and clinics that run on it.
             </p>
 
             <div style={d(".34s")} className="rise mt-9 flex flex-wrap items-center gap-x-4 gap-y-4">
               <Button href="/contact">Get a Quote</Button>
-              <Button href="/apply" variant="outline">
-                Join the Academy
+              <Button href="/products" variant="outline">
+                See the products
               </Button>
             </div>
 
             <div style={d(".46s")} className="rise mt-9">
-              <TextLink href="/products">See what we have built</TextLink>
+              <TextLink href={whatsappLink("Hi Kataf, I would like to see a demo.")} external>
+                Ask for a demo on WhatsApp
+              </TextLink>
             </div>
           </div>
 
@@ -93,12 +92,6 @@ export function Hero() {
                 Outstanding, live ↓
               </p>
 
-              <div style={d("1.3s")} className="pop absolute right-[3%] -top-2 z-20 hidden w-[27%] rotate-3 lg:block">
-                <CertificateArt course="Full Stack Development" className="block h-auto w-full shadow-frame" />
-                <p className="label absolute -bottom-3 left-3 rounded border border-ink bg-paper px-2 py-1 text-[10px] shadow-[2px_2px_0_#14130F]">
-                  <span className="text-olive">✓</span> Verified online
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -106,7 +99,7 @@ export function Hero() {
 
       {/* facts strip */}
       <div className="wrap relative">
-        <dl className="grid grid-cols-3 border-t border-ink md:grid-cols-4 md:divide-x md:divide-line">
+        <dl className="grid grid-cols-2 border-t border-ink md:grid-cols-4 md:divide-x md:divide-line">
           {stats.map((s) => (
             <div key={s.l} className="border-l border-line py-6 pl-4 first:border-l-0 first:pl-0 md:border-l-0 md:px-6 md:first:pl-0">
               <dd className="font-serif text-[36px] leading-none tracking-[-0.03em] md:text-[56px]">
@@ -115,9 +108,13 @@ export function Hero() {
               <dt className="label mt-2 text-muted">{s.l}</dt>
             </div>
           ))}
-          <div className="col-span-3 border-t border-line py-6 md:col-span-1 md:border-t-0 md:px-6">
-            <dd className="font-serif text-[44px] leading-none tracking-[-0.03em] text-olive md:text-[56px]">✓</dd>
-            <dt className="label mt-2 text-muted">Internship + verifiable certificate</dt>
+          <div className="border-l border-line py-6 pl-4 md:px-6">
+            <dd className="font-serif text-[36px] leading-none tracking-[-0.03em] text-olive md:text-[56px]">✓</dd>
+            <dt className="label mt-2 text-muted">WhatsApp built in</dt>
+          </div>
+          <div className="border-l border-line py-6 pl-4 md:px-6">
+            <dd className="font-serif text-[36px] leading-none tracking-[-0.03em] text-olive md:text-[56px]">✓</dd>
+            <dt className="label mt-2 text-muted">Your data, exportable</dt>
           </div>
         </dl>
       </div>

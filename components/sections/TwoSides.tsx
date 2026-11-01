@@ -89,7 +89,7 @@ export function TwoSides() {
       </div>
 
       {/* Learn */}
-      <div className="on-dark relative overflow-hidden bg-ink text-paper">
+      <div className="theme-academy on-dark relative overflow-hidden bg-olive-deep text-paper">
         <Wheat
           delay={0.3}
           className="pointer-events-none absolute -right-4 -top-10 hidden h-[460px] rotate-[14deg] text-olive-tint/25 lg:block"

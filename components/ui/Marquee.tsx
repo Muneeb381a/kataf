@@ -6,7 +6,7 @@ export type MarqueeRow = {
   reverse?: boolean;
   /** serif = headline words, mono = small uppercase labels */
   style?: "serif" | "mono";
-  tone?: "ink" | "olive";
+  tone?: "ink" | "olive" | "academy";
 };
 
 /**
@@ -27,7 +27,7 @@ export function Marquee({ rows }: { rows: MarqueeRow[] }) {
     >
       {rows.map((r, idx) => {
         const mono = r.style === "mono";
-        const bg = r.tone === "olive" ? "bg-olive-deep" : "bg-ink";
+        const bg = r.tone === "academy" ? "theme-academy bg-olive-deep" : r.tone === "olive" ? "bg-olive-deep" : "bg-ink";
         const set = (
           <div className="flex shrink-0 items-center">
             {r.items.map((t, i) => (
@@ -40,7 +40,7 @@ export function Marquee({ rows }: { rows: MarqueeRow[] }) {
                 {mono ? (
                   <span aria-hidden="true" className="mx-7 h-1.5 w-1.5 rotate-45 bg-olive-tint/60" />
                 ) : (
-                  <LogoMark className="mx-8 h-[15px] w-[16px] text-olive-tint/70 md:mx-10" />
+                  <LogoMark className="mx-8 h-[15px] w-[16px] text-wheat/80 md:mx-10" />
                 )}
               </span>
             ))}

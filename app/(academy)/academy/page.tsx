@@ -2,13 +2,16 @@ import type { Metadata } from "next";
 import { Button, TextLink } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Wheat } from "@/components/ui/Wheat";
+import { HandUnderline } from "@/components/ui/HandUnderline";
 import { Accordion } from "@/components/ui/Accordion";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { CourseCards } from "@/components/sections/CourseCards";
 import { FeeTable, Includes, InternshipPath, TalkFirst } from "@/components/sections/AcademyTrust";
+import { CourseFan } from "@/components/sections/CourseFan";
+import { CountUp } from "@/components/ui/CountUp";
 import { ApplyForm } from "@/components/sections/ApplyForm";
-import { commonCourseFaqs } from "@/lib/courses";
+import { commonCourseFaqs, courses } from "@/lib/courses";
 import { whatsappLink } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -64,35 +67,61 @@ export default function AcademyPage() {
     <>
       <JsonLd data={faqLd} />
 
-      <section className="relative overflow-hidden pt-14 md:pt-24">
-        <Wheat className="pointer-events-none absolute -right-6 -top-6 hidden h-[560px] rotate-[12deg] text-olive/15 lg:block" />
-        <div className="wrap relative pb-16 md:pb-24">
-          <SectionLabel>Kataf Academy</SectionLabel>
-          <h1 className="display max-w-[14ch]">
-            Learn the craft <span className="italic text-olive">behind</span> the software.
-          </h1>
-          <p className="mt-8 max-w-[50ch] text-muted">
-            Graphic designing, web development, backend, full stack, AI and digital marketing. Taught by doing, in a
-            software house that builds real products.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
-            <Button href="/apply">Apply now</Button>
-            <TextLink href={whatsappLink("Hi Kataf, I have a question about the Academy.")} external>
-              Ask on WhatsApp
-            </TextLink>
+      <section className="relative overflow-hidden border-b border-line">
+        {/* rising sun behind the course cards */}
+        <div aria-hidden="true" className="pointer-events-none absolute -right-28 top-6 hidden h-[560px] w-[560px] rounded-full bg-wheat-tint lg:block" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-[60px] top-[74px] hidden h-[430px] w-[430px] rounded-full border-2 border-wheat lg:block" />
+        <Wheat className="pointer-events-none absolute -bottom-16 right-[46%] hidden h-[460px] rotate-[6deg] text-olive/25 lg:block" />
+
+        <div className="wrap relative grid items-center gap-14 pb-16 pt-12 md:pt-20 lg:grid-cols-12 lg:gap-x-6">
+          <div className="lg:col-span-6">
+            <p className="label mb-7 inline-flex items-center gap-3 rounded border border-olive bg-paper px-3 py-1.5 text-olive">
+              <span className="h-1.5 w-1.5 rounded-full bg-olive" aria-hidden="true" />
+              Kataf Academy · Learn · Build · Work
+            </p>
+            <h1 className="display">
+              Learn the craft <span className="relative inline-block italic text-olive">behind<HandUnderline animated tone="text-wheat" className="-bottom-1 h-[0.15em] md:-bottom-2" /></span> the software.
+            </h1>
+            <p className="mt-8 max-w-[46ch] text-[18px] leading-relaxed text-muted md:text-[20px]">
+              Graphic designing, web development, backend, full stack, AI and digital marketing. Taught by doing, in a
+              software house that builds real products.
+            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Button href="/apply">Apply now</Button>
+              <Button href="#courses" variant="outline" arrow={false}>
+                See the courses ↓
+              </Button>
+            </div>
+            <p className="mt-6">
+              <TextLink href={whatsappLink("Hi Kataf, I have a question about the Academy.")} external>
+                Ask us on WhatsApp first
+              </TextLink>
+            </p>
           </div>
-          <ul className="label mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-5 text-muted">
-            {["Verifiable certificate", "Internship in every course", "Real projects", "Fee in writing"].map((b) => (
-              <li key={b} className="flex items-center gap-2">
-                <span className="text-olive" aria-hidden="true">✓</span>
-                {b}
-              </li>
+          <div className="relative lg:col-span-6">
+            <CourseFan className="mx-auto hidden h-[440px] max-w-[580px] lg:block" />
+          </div>
+        </div>
+
+        <div className="wrap relative">
+          <dl className="grid grid-cols-3 border-t border-ink">
+            {[
+              { n: courses.length, l: "Courses" },
+              { n: courses.filter((c) => c.internship).length, l: "With an internship" },
+              { n: courses.length, l: "Verifiable certificates" },
+            ].map((x) => (
+              <div key={x.l} className="border-l border-line py-6 pl-4 first:border-l-0 first:pl-0 md:pl-8 md:first:pl-0">
+                <dd className="font-serif text-[40px] leading-none tracking-[-0.03em] md:text-[56px]">
+                  <CountUp to={x.n} />
+                </dd>
+                <dt className="label mt-2 text-muted">{x.l}</dt>
+              </div>
             ))}
-          </ul>
+          </dl>
         </div>
       </section>
 
-      <section className="border-t border-line py-16 md:py-24">
+      <section id="courses" className="py-16 md:py-24">
         <div className="wrap">
           <SectionLabel num="01">Courses</SectionLabel>
           <h2 className="h2 mb-12 max-w-[16ch]">Six courses. Pick the one that gets you working.</h2>

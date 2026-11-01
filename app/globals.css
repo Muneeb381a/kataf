@@ -1,21 +1,40 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-paper: #f3efe6;
-  --color-paper-2: #e9e4d6;
+/* Colours are plain variables (not inlined) so a section can re-theme itself, see .theme-academy below. */
+@theme {
+  --color-paper: #f5f0e3;
+  --color-paper-2: #ebe3cf;
   --color-ink: #14130f;
   --color-olive: #2f4a2b;
-  --color-olive-deep: #1f3320;
-  --color-olive-tint: #dde3cf;
+  --color-olive-deep: #1c3320;
+  --color-olive-tint: #dce4c8;
+  --color-wheat: #d9a23a;
+  --color-wheat-tint: #f4e3b5;
   --color-muted: #5c5a50;
-  --color-line: #d2cdba;
+  --color-line: #d6cdb2;
+}
 
+@theme inline {
   --font-serif: var(--font-fraunces), Georgia, serif;
   --font-sans: var(--font-general-sans), system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
   --shadow-frame: 8px 8px 0 #14130f;
   --radius: 4px;
+}
+
+/*
+ * Kataf Academy has its own look so courses never get mixed up with the software house.
+ * Same class names, new values: "olive" becomes terracotta, paper becomes warm cream.
+ */
+.theme-academy {
+  --color-paper: #fbf2df;
+  --color-paper-2: #f2e2c0;
+  --color-olive: #a8421c;
+  --color-olive-deep: #7a2c10;
+  --color-olive-tint: #f4d9c2;
+  --color-muted: #6a5a47;
+  --color-line: #e3cfa6;
 }
 
 @layer base {

@@ -1,11 +1,11 @@
 /** Hand-drawn style underline. Sits under its positioned parent. */
-export function HandUnderline({ className = "", animated = false }: { className?: string; animated?: boolean }) {
+export function HandUnderline({ className = "", animated = false, tone = "text-olive" }: { className?: string; animated?: boolean; tone?: string }) {
   return (
     <svg
       viewBox="0 0 200 12"
       preserveAspectRatio="none"
       aria-hidden="true"
-      className={`pointer-events-none absolute left-0 w-full overflow-visible text-olive ${animated ? "wipe" : ""} ${className}`}
+      className={`pointer-events-none absolute left-0 w-full overflow-visible ${tone} ${animated ? "wipe" : ""} ${className}`}
       fill="none"
     >
       <path
