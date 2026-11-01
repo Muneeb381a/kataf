@@ -166,6 +166,32 @@
 }
 .rain { opacity: 0; animation: rain 3.4s linear infinite; }
 .spin-slow { animation: spin-slow 60s linear infinite; }
+@keyframes stalk-sway {
+  from { transform: rotate(-1deg); }
+  to { transform: rotate(1.4deg); }
+}
+@keyframes drift {
+  from { transform: translateX(-24px); }
+  to { transform: translateX(48px); }
+}
+@keyframes fly {
+  from { transform: translate(-30px, 6px); }
+  to { transform: translate(150px, -10px); }
+}
+@keyframes tilt {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(5deg); }
+}
+@keyframes pour {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 0.9; }
+  100% { transform: translateY(150px); opacity: 0; }
+}
+.stalk-sway { animation: stalk-sway 5s ease-in-out infinite alternate; }
+.cloud { animation: drift 26s ease-in-out infinite alternate; }
+.bird { animation: fly 16s ease-in-out infinite alternate; }
+.can { animation: tilt 4s ease-in-out 3.2s infinite; }
+.pour { opacity: 0; animation: pour 1.4s ease-in infinite; }
 @keyframes ring {
   0% { transform: scale(1); opacity: 0.45; }
   70%, 100% { transform: scale(1.7); opacity: 0; }
@@ -205,7 +231,7 @@ details > summary::-webkit-details-marker {
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track,
-  .rise, .slide-in, .pop, .wipe, .wheat-sway, .pulse-ring, .rain, .spin-slow {
+  .rise, .slide-in, .pop, .wipe, .wheat-sway, .pulse-ring, .rain, .spin-slow, .stalk-sway, .cloud, .bird, .can, .pour {
     animation: none !important;
   }
   *, *::before, *::after {

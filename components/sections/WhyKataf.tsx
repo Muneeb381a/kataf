@@ -13,7 +13,7 @@ const reasons = [
 
 export function WhyKataf() {
   return (
-    <section className="on-dark section relative overflow-hidden bg-ink text-paper">
+    <section className="on-dark section relative overflow-hidden bg-ink text-paper !pt-16 md:!pt-24">
       <Wheat className="pointer-events-none absolute -bottom-24 left-[2%] hidden h-[620px] -rotate-[10deg] text-olive-tint/15 lg:block" />
       <div className="wrap relative grid gap-12 lg:grid-cols-12 lg:gap-x-6">
         <div className="lg:col-span-5">
