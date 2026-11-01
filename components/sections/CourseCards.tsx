@@ -42,6 +42,14 @@ export function CourseCards() {
                   <li className="label pl-6 text-olive">+{c.modules.length - 4} more modules</li>
                 </ul>
 
+                <ul className="mb-4 flex flex-wrap gap-2">
+                  <li className="label rounded border border-line bg-olive-tint px-2 py-1 text-olive-deep">Certificate</li>
+                  {c.internship && (
+                    <li className="label rounded border border-line bg-olive-tint px-2 py-1 text-olive-deep">Internship</li>
+                  )}
+                  <li className="label rounded border border-line px-2 py-1 text-muted">{c.fee ?? "Fee on WhatsApp"}</li>
+                </ul>
+
                 <div className="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-line pt-5">
                   <span className="label text-muted">
                     {c.modules.length} modules · {c.projects.length} projects

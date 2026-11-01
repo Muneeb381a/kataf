@@ -11,6 +11,12 @@ export type Course = {
   whoFor: string;
   prerequisite: string;
   level: string;
+  /** Set when the fee is final, e.g. "PKR 25,000". Until then the site says it is shared on WhatsApp. */
+  fee?: string;
+  /** e.g. "3 months". Leave unset until confirmed. */
+  duration?: string;
+  /** Internship offered after the course. */
+  internship: boolean;
   outcomes: [string, string, string];
   modules: CourseModule[];
   projects: string[];
@@ -47,6 +53,7 @@ export const courses: Course[] = [
       "School and college students, press and shop staff who want to move into design, and anyone who wants to start freelance design work. You do not need to draw. You need to be willing to look closely.",
     prerequisite: "No experience needed. You start from zero.",
     level: "Beginner",
+    internship: true,
     outcomes: [
       "Design a logo and brand kit from a blank page.",
       "Prepare files that print correctly at a real press.",
@@ -91,6 +98,7 @@ export const courses: Course[] = [
       "Beginners who want to become frontend developers, students looking for a first tech skill, and shop or clinic owners who want to understand how their own website is made.",
     prerequisite: "No experience needed. You should be comfortable using a computer.",
     level: "Beginner",
+    internship: true,
     outcomes: [
       "Build a responsive website without a template.",
       "Write JavaScript that makes a page interactive.",
@@ -136,6 +144,7 @@ export const courses: Course[] = [
       "People who already know basic JavaScript and want to build what runs behind a website or app: orders, users, payments and reports.",
     prerequisite: "Basic JavaScript. If you have finished our Web Development course, you are ready.",
     level: "Needs JS basics",
+    internship: true,
     outcomes: [
       "Design and build a REST API.",
       "Store and query data in PostgreSQL.",
@@ -175,6 +184,7 @@ export const courses: Course[] = [
       "Beginners who want one complete path to becoming a developer, and learners who want to build whole products by themselves, as a freelancer or inside a company.",
     prerequisite: "No experience needed. This is the longest path, and it starts from zero.",
     level: "Starts from zero",
+    internship: true,
     outcomes: [
       "Build a complete web app, frontend to database.",
       "Use React and Next.js the way teams do.",
@@ -216,6 +226,7 @@ export const courses: Course[] = [
       "Students, freelancers and business owners who want to use AI properly in their work, and learners with some coding who want to build AI features into real products.",
     prerequisite: "The tools and prompting modules need no experience. The building modules assume basic programming.",
     level: "All levels",
+    internship: false,
     outcomes: [
       "Write prompts that give reliable results.",
       "Automate repeated tasks with AI and no-code tools.",
@@ -255,6 +266,7 @@ export const courses: Course[] = [
       "Shop and business owners who want to bring in customers online, students who want a marketing career, and freelancers who want to run campaigns for clients.",
     prerequisite: "No experience needed.",
     level: "Beginner",
+    internship: true,
     outcomes: [
       "Plan and run a campaign from start to finish.",
       "Read the numbers and know what is working.",

@@ -6,6 +6,7 @@ import { Accordion } from "@/components/ui/Accordion";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { CourseCards } from "@/components/sections/CourseCards";
+import { FeeTable, Includes, InternshipPath, TalkFirst } from "@/components/sections/AcademyTrust";
 import { ApplyForm } from "@/components/sections/ApplyForm";
 import { commonCourseFaqs } from "@/lib/courses";
 import { whatsappLink } from "@/lib/config";
@@ -34,6 +35,14 @@ const paths = [
 
 const faqs = [
   ...commonCourseFaqs,
+  {
+    q: "What does the certificate say?",
+    a: "It carries your name, the course, and Kataf Academy's signature. It is awarded when you complete the course and its final project.",
+  },
+  {
+    q: "How does the internship work?",
+    a: "After the course you can work on real projects with our team, in the courses where that is possible. We explain the dates and terms at admission, before you pay.",
+  },
   {
     q: "I am not sure which course to choose.",
     a: "Tell us what you want to do after the course, and we will suggest one. You can pick Not sure on the admission form, or message us on WhatsApp.",
@@ -72,6 +81,14 @@ export default function AcademyPage() {
               Ask on WhatsApp
             </TextLink>
           </div>
+          <ul className="label mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-5 text-muted">
+            {["Certificate on completion", "Internship opportunity", "Real projects", "Fee shared in writing"].map((b) => (
+              <li key={b} className="flex items-center gap-2">
+                <span className="text-olive" aria-hidden="true">✓</span>
+                {b}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -83,9 +100,14 @@ export default function AcademyPage() {
         </div>
       </section>
 
+      <Includes />
+      <InternshipPath />
+      <FeeTable />
+      <TalkFirst />
+
       <section className="section bg-paper-2">
         <div className="wrap">
-          <SectionLabel num="02">How you learn</SectionLabel>
+          <SectionLabel num="06">How you learn</SectionLabel>
           <h2 className="h2 max-w-[16ch]">Less listening. More making.</h2>
           <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {method.map((m, i) => (
@@ -111,7 +133,7 @@ export default function AcademyPage() {
       <section className="section">
         <div className="wrap grid gap-10 lg:grid-cols-12 lg:gap-x-6">
           <div className="lg:col-span-4">
-            <SectionLabel num="03">Paths</SectionLabel>
+            <SectionLabel num="07">Paths</SectionLabel>
             <h2 className="h2">Where each course can take you.</h2>
           </div>
           <ul className="lg:col-span-7 lg:col-start-6">
@@ -136,7 +158,7 @@ export default function AcademyPage() {
       <section className="section pt-0 md:pt-0">
         <div className="wrap grid gap-10 lg:grid-cols-12 lg:gap-x-6">
           <div className="lg:col-span-4">
-            <SectionLabel num="04">FAQ</SectionLabel>
+            <SectionLabel num="08">FAQ</SectionLabel>
             <h2 className="h2">Before you apply.</h2>
           </div>
           <div className="lg:col-span-7 lg:col-start-6">
@@ -148,7 +170,7 @@ export default function AcademyPage() {
       <section id="apply" className="on-dark bg-ink text-paper">
         <div className="wrap grid gap-12 py-20 md:py-28 lg:grid-cols-12 lg:gap-x-6">
           <div className="lg:col-span-4">
-            <p className="label mb-5 text-olive-tint">05 / Apply</p>
+            <p className="label mb-5 text-olive-tint">09 / Apply</p>
             <h2 className="h2">Ready to start?</h2>
             <p className="mt-5 max-w-[34ch] text-paper/70">
               Send the form. We reply on WhatsApp with the fee, the next batch and what to bring.
