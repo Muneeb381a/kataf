@@ -1,0 +1,26 @@
+---
+title: "Rice trading POS"
+type: "Software"
+order: 4
+summary: "Custom point-of-sale for a rice trader, with batch-wise costing."
+problem: "Rice is bought in lots at different prices, but sold from one pile, so the real margin is a guess."
+result: "Each sale is costed against the batch it came from."
+cover: "custom/01-rice-pos"
+coverLabel: "Rice trading POS"
+---
+
+## The problem
+
+A rice trader buys in lots, and each lot costs something different. Once the bags are stacked together, the cost of what was sold is an average at best. The margin on any single sale is a guess.
+
+## What we built
+
+A point-of-sale where stock is tracked by batch. Every sale draws from a named batch, so cost and margin are known per sale, not per month.
+
+<Shot src="custom/01-rice-pos" label="Rice trading POS" />
+
+## Behind the screens
+
+- Purchases recorded as batches with their own cost
+- Sales costed against the batch they came from
+- Party ledgers and daily cash book

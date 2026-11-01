@@ -1,0 +1,24 @@
+-- Run once against your PostgreSQL database (or use `npm run db:push`).
+CREATE TABLE IF NOT EXISTS leads (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  business_type TEXT,
+  interested_in TEXT NOT NULL,
+  message TEXT NOT NULL,
+  budget TEXT,
+  source_page TEXT,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS applications (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  city TEXT,
+  course TEXT NOT NULL,
+  background TEXT,
+  message TEXT,
+  source_page TEXT,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
