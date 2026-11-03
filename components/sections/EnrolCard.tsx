@@ -11,6 +11,7 @@ export function EnrolCard({ course: c }: { course: Course }) {
     { k: "Track", v: c.track === "advanced" ? "Advanced" : "Beginner" },
     { k: "Level", v: c.level },
     { k: "Format", v: "100% hands-on" },
+    { k: "Batches", v: "Separate for men and women" },
     { k: "Projects", v: `${c.projects.length} to build` },
     { k: "Certificate", v: "Yes, on completion" },
     { k: "Internship", v: c.internship ? "Yes, after the course" : "Project showcase" },

@@ -39,6 +39,8 @@ export async function POST(req: Request) {
         city: d.city || null,
         course: d.course,
         background: d.background || null,
+        batch: d.batch || null,
+        slot: d.slot || null,
         message: d.message || null,
         sourcePage: d.sourcePage || null,
       });
@@ -50,7 +52,7 @@ export async function POST(req: Request) {
 
   const summary =
     `New Kataf Academy application\n${d.name} · ${d.phone}\nCourse: ${d.course}\n` +
-    `City: ${d.city || "-"} · Background: ${d.background || "-"}\n\n${d.message || "(no message)"}\n\nFrom: ${d.sourcePage || "-"}`;
+    `City: ${d.city || "-"} · Background: ${d.background || "-"}\nBatch: ${d.batch || "-"} · Slot: ${d.slot || "-"}\n\n${d.message || "(no message)"}\n\nFrom: ${d.sourcePage || "-"}`;
 
   const [emailed, whatsapped] = await Promise.all([
     sendEmail(`Academy application: ${d.course} · ${d.name}`, summary),

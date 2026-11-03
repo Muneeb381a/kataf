@@ -24,6 +24,7 @@ const software = {
 const academy = {
   links: [
     { href: "/academy#courses", label: "Courses" },
+    { href: "/academy#schedule", label: "Timings" },
     { href: "/academy#internship", label: "Internship" },
     { href: "/academy#fees", label: "Fees" },
     { href: "/verify", label: "Verify certificate" },

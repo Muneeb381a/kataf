@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { backgrounds } from "@/lib/forms";
 import { courses } from "@/lib/courses";
+import { batchOptions, slotOptions } from "@/lib/schedule";
 import { SubmitButton } from "@/components/ui/Button";
 
 type Errors = Partial<Record<string, string>>;
@@ -135,6 +136,39 @@ export function ApplyForm({
             City
           </label>
           <input id="a-city" name="city" autoComplete="address-level2" className={input} />
+        </div>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <div>
+          <label htmlFor="a-batch" className={labelCls}>
+            Batch
+          </label>
+          <select id="a-batch" name="batch" defaultValue="" className={input}>
+            <option value="" className="text-ink">
+              Select
+            </option>
+            {batchOptions.map((b) => (
+              <option key={b} className="text-ink">
+                {b}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label htmlFor="a-slot" className={labelCls}>
+            Preferred slot
+          </label>
+          <select id="a-slot" name="slot" defaultValue="" className={input}>
+            <option value="" className="text-ink">
+              Select
+            </option>
+            {slotOptions.map((x) => (
+              <option key={x} className="text-ink">
+                {x}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 

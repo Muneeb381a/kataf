@@ -6,6 +6,7 @@ import { HandUnderline } from "@/components/ui/HandUnderline";
 import { Accordion } from "@/components/ui/Accordion";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { BatchSchedule } from "@/components/sections/BatchSchedule";
 import { CourseBrowser } from "@/components/sections/CourseBrowser";
 import { FeeTable, HandsOnSection, Includes, InternshipPath, TalkFirst } from "@/components/sections/AcademyTrust";
 import { CourseFan } from "@/components/sections/CourseFan";
@@ -127,6 +128,17 @@ export default function AcademyPage() {
           <SectionLabel num="01">Courses</SectionLabel>
           <h2 className="h2 mb-12 max-w-[18ch]">Nine courses. Choose your level, then your course.</h2>
           <CourseBrowser />
+        </div>
+      </section>
+
+      <section id="schedule" className="section bg-paper-2">
+        <div className="wrap">
+          <SectionLabel num="02">Class timings</SectionLabel>
+          <h2 className="h2 mb-4 max-w-[18ch]">Separate batches for men and women.</h2>
+          <p className="mb-12 max-w-[52ch] text-muted">
+            Men and women study in their own batches, with their own timings. Pick yours to see the slots.
+          </p>
+          <BatchSchedule />
         </div>
       </section>
 

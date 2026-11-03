@@ -32,3 +32,7 @@ CREATE TABLE IF NOT EXISTS certificates (
   revoked BOOLEAN NOT NULL DEFAULT FALSE,
   created_at TIMESTAMPTZ DEFAULT now()
 );
+
+-- Added later: batch and slot preference on applications.
+ALTER TABLE applications ADD COLUMN IF NOT EXISTS batch TEXT;
+ALTER TABLE applications ADD COLUMN IF NOT EXISTS slot TEXT;

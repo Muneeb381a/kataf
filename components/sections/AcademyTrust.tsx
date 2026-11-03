@@ -17,7 +17,7 @@ export function HandsOnSection() {
     <section className="relative overflow-hidden bg-olive py-16 text-paper md:py-24">
       <div className="wrap relative grid gap-12 lg:grid-cols-12 lg:gap-x-6">
         <div className="lg:col-span-5">
-          <p className="label mb-5 text-wheat">02 / How we teach</p>
+          <p className="label mb-5 text-wheat">03 / How we teach</p>
           <h2 className="h2">
             We do not just teach. You get full <span className="italic text-wheat">hands-on</span> experience.
           </h2>
@@ -47,7 +47,7 @@ export function Includes() {
   return (
     <section className="section">
       <div className="wrap">
-        <SectionLabel num="03">Every course includes</SectionLabel>
+        <SectionLabel num="04">Every course includes</SectionLabel>
         <h2 className="h2 max-w-[18ch]">Hands-on learning, a certificate, and a way into work.</h2>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-x-6">
@@ -99,7 +99,7 @@ export function InternshipPath() {
     <section id="internship" className="on-dark relative overflow-hidden bg-ink py-20 text-paper md:py-32">
       <Wheat className="pointer-events-none absolute -right-4 -top-10 hidden h-[520px] rotate-[14deg] text-wheat/15 lg:block" />
       <div className="wrap relative">
-        <p className="label mb-5 text-wheat">04 / Internship</p>
+        <p className="label mb-5 text-wheat">05 / Internship</p>
         <h2 className="h2 max-w-[18ch]">
           Learn it. Then do it for <span className="italic text-wheat">real</span>.
         </h2>
@@ -157,7 +157,7 @@ export function FeeTable() {
   return (
     <section id="fees" className="section">
       <div className="wrap">
-        <SectionLabel num="05">Fees</SectionLabel>
+        <SectionLabel num="06">Fees</SectionLabel>
         <h2 className="h2 max-w-[18ch]">Clear fees, shared before you decide.</h2>
         <p className="mt-6 max-w-[52ch] text-muted">
           Fee and batch dates change from batch to batch. We send the exact figure on WhatsApp, so you see it in writing
@@ -215,7 +215,7 @@ export function TalkFirst() {
     <section className="border-y border-line bg-paper-2 py-16 md:py-24">
       <div className="wrap grid gap-12 lg:grid-cols-12 lg:gap-x-6">
         <div className="lg:col-span-5">
-          <SectionLabel num="06">Admission</SectionLabel>
+          <SectionLabel num="07">Admission</SectionLabel>
           <h2 className="h2">Talk to us before you pay anything.</h2>
           <p className="mt-6 max-w-[40ch] text-muted">
             Visit, call or message. Ask about the syllabus, the batch and the internship, and decide only when you are

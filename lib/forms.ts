@@ -61,6 +61,8 @@ export const applySchema = z.object({
   city: z.string().trim().max(80).optional().or(z.literal("")),
   course: z.string().trim().min(2, "Choose a course").max(80),
   background: z.string().trim().max(60).optional().or(z.literal("")),
+  batch: z.string().trim().max(40).optional().or(z.literal("")),
+  slot: z.string().trim().max(40).optional().or(z.literal("")),
   message: z.string().trim().max(2000).optional().or(z.literal("")),
   sourcePage: z.string().trim().max(200).optional(),
   website: z.string().max(200).optional(), // honeypot

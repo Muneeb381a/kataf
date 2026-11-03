@@ -19,6 +19,8 @@ export const applications = pgTable("applications", {
   city: text("city"),
   course: text("course").notNull(),
   background: text("background"),
+  batch: text("batch"),
+  slot: text("slot"),
   message: text("message"),
   sourcePage: text("source_page"),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
