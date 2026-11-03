@@ -80,7 +80,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             <Link href="/academy" className="label link-quiet text-olive">
               ← Academy
             </Link>
-            <p className="label mb-6 mt-8 text-olive">Course {c.num}</p>
+            <p className="label mb-6 mt-8 text-olive">
+              Course {c.num} · {c.track === "advanced" ? "Advanced" : "Beginner"}
+            </p>
             <h1 className="display max-w-[14ch]">{c.name}</h1>
             <p className="mt-6 max-w-[40ch] font-serif text-[24px] leading-snug text-muted md:text-[32px]">{c.tagline}</p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
@@ -90,6 +92,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
               </TextLink>
             </div>
             <ul className="label mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-5 text-muted">
+              <li className="flex items-center gap-2">
+                <span className="text-olive" aria-hidden="true">✓</span> 100% hands-on
+              </li>
               <li className="flex items-center gap-2">
                 <span className="text-olive" aria-hidden="true">✓</span> Certificate on completion
               </li>
@@ -144,6 +149,17 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                 </li>
               ))}
             </ul>
+          </section>
+
+          {/* Hands-on */}
+          <section className="rounded border border-olive bg-olive-tint p-6 md:p-8">
+            <p className="label text-olive-deep">How this course is taught</p>
+            <h2 className="mt-2 font-serif text-[28px] leading-tight tracking-[-0.02em] md:text-[34px]">
+              We do not just teach. You get full hands-on experience.
+            </h2>
+            <p className="mt-3 max-w-[56ch] text-olive-deep/90">
+              Every session is a working session on your own computer, and every module ends with something you build.
+            </p>
           </section>
 
           {/* Curriculum */}

@@ -24,7 +24,7 @@ export default function Home() {
           { label: "We build", items: ["Printing press", "Installments", "Clinics", "Custom software", "Websites"], tone: "ink" },
           {
             label: "We teach",
-            items: ["Graphic design", "Web development", "Backend", "Full stack", "AI skills", "Digital marketing"],
+            items: ["Graphic design", "Web development", "Backend", "Full stack", "AI skills", "Digital marketing", "Video editing", "Computer essentials"],
             style: "mono",
             tone: "academy",
             reverse: true,

@@ -145,7 +145,55 @@ function Marketing() {
   );
 }
 
+function Video() {
+  return (
+    <>
+      <rect x="110" y="20" width="180" height="104" className="fill-ink stroke-ink" strokeWidth="2" />
+      <circle cx="200" cy="72" r="22" className="fill-olive" />
+      <path d="M193 60 L213 72 L193 84Z" className="fill-paper" />
+      {[0, 1, 2].map((r) => (
+        <g key={r}>
+          <rect x="30" y={140 + r * 28} width="340" height="22" className="fill-paper stroke-ink" strokeWidth="1.5" />
+          <rect x={40 + r * 18} y={143 + r * 28} width="90" height="16" className="fill-olive stroke-ink" strokeWidth="1" />
+          <rect x={150 + r * 10} y={143 + r * 28} width="70" height="16" className="fill-olive-tint stroke-olive" strokeWidth="1" />
+          <rect x={240 - r * 12} y={143 + r * 28} width="100" height="16" className="fill-paper-2 stroke-ink" strokeWidth="1" />
+        </g>
+      ))}
+      <path d="M170 134 V228" className="stroke-ink" strokeWidth="2" />
+      <path d="M163 134 h14 l-7 9z" className="fill-ink" />
+    </>
+  );
+}
+
+function Office() {
+  return (
+    <>
+      <rect x="40" y="26" width="240" height="176" className="fill-paper stroke-ink" strokeWidth="2" />
+      {[0, 1, 2, 3, 4].map((r) => (
+        <path key={"h" + r} d={"M40 " + (56 + r * 29) + "H280"} className="stroke-ink" strokeWidth="1" opacity=".5" />
+      ))}
+      {[0, 1, 2, 3].map((c) => (
+        <path key={"v" + c} d={"M" + (100 + c * 60) + " 26V202"} className="stroke-ink" strokeWidth="1" opacity=".5" />
+      ))}
+      <rect x="40" y="26" width="240" height="30" className="fill-olive" />
+      <text x="62" y="46" className="fill-paper font-mono" fontSize="12">A       B       C       D</text>
+      <rect x="100" y="85" width="60" height="29" className="fill-olive-tint stroke-olive" strokeWidth="1.5" />
+      {[[56, 36], [116, 52], [176, 28], [236, 62]].map(([x, h], i) => (
+        <rect key={i} x={x} y={196 - h} width="26" height={h} className="fill-olive stroke-ink" strokeWidth="1.2" />
+      ))}
+      <rect x="300" y="50" width="64" height="86" className="fill-paper stroke-ink" strokeWidth="2" />
+      {[64, 76, 88, 100].map((y) => (
+        <path key={y} d={"M308 " + y + "H356"} className="stroke-olive-tint" strokeWidth="4" />
+      ))}
+      <text x="332" y="124" textAnchor="middle" className="fill-ink font-serif" fontSize="22">W</text>
+    </>
+  );
+}
+
 const art = {
+  "graphic-designing-advanced": Design,
+  "video-editing": Video,
+  "computer-essentials": Office,
   "graphic-designing": Design,
   "web-development": Web,
   "backend-development": Backend,

@@ -73,6 +73,36 @@ export const internshipRoles: Record<string, { role: string; summary: string; ta
     ],
     practise: "Shipping, reviews and owning a piece of the product",
   },
+  "graphic-designing-advanced": {
+    role: "Brand design intern",
+    summary: "Work on brand and campaign design for real clients.",
+    tasks: [
+      "Build brand kits and guidelines for client businesses",
+      "Design packaging and multi-page layouts",
+      "Prepare production files and check them before print",
+    ],
+    practise: "Client rounds, deadlines and production quality",
+  },
+  "video-editing": {
+    role: "Video editing intern",
+    summary: "Edit real videos for real businesses.",
+    tasks: [
+      "Cut social media videos and short clips for clients",
+      "Add captions, music and titles",
+      "Prepare final exports for each platform",
+    ],
+    practise: "Deadlines, client feedback and organised project files",
+  },
+  "computer-essentials": {
+    role: "Office and data intern",
+    summary: "Use your skills on real documents, sheets and presentations.",
+    tasks: [
+      "Prepare documents, letters and reports in Word",
+      "Build and clean up spreadsheets in Excel",
+      "Create presentations for the team",
+    ],
+    practise: "Accuracy, organisation and working to a brief",
+  },
   ai: {
     role: "AI intern",
     summary: "Turn what you learned into tools a team can actually use.",
@@ -107,4 +137,11 @@ export const internshipQualify = [
   "Finish the final project",
   "Receive your certificate with its verifiable ID",
   "Talk to us about dates and terms. We explain them at admission, before you pay.",
+];
+
+export const handsOn = [
+  { t: "You work in every session", d: "Each class is a working session. You do the task yourself, on your own computer, with the instructor beside you." },
+  { t: "Every module ends in a build", d: "No module is finished until you have made something: a design, a page, an API, a video, a spreadsheet." },
+  { t: "Real projects, not slides", d: "You finish with projects for your portfolio, and an internship on real work." },
+  { t: "Feedback on your own work", d: "We review what you made, show you what to fix, and you fix it." },
 ];

@@ -29,7 +29,7 @@ export function AcademyDoor() {
             Want to learn the <span className="italic text-olive">craft</span>? We teach it.
           </h2>
           <p className="mt-5 max-w-[44ch] text-muted">
-            Six courses in design, code, AI and marketing. Every one ends with a project, a certificate with an ID anyone
+            Nine hands-on courses in design, video, computer skills, code, AI and marketing. Every one ends with a project, a certificate with an ID anyone
             can verify, and an internship.
           </p>
           <ul className="mt-8 flex flex-wrap gap-2">

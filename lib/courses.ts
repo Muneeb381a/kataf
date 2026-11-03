@@ -11,6 +11,8 @@ export type Course = {
   whoFor: string;
   prerequisite: string;
   level: string;
+  /** Beginner: start from zero. Advanced: professional tracks. */
+  track: "beginner" | "advanced";
   /** Set when the fee is final, e.g. "PKR 25,000". Until then the site says it is shared on WhatsApp. */
   fee?: string;
   /** e.g. "3 months". Leave unset until confirmed. */
@@ -27,6 +29,10 @@ export type Course = {
 /** Asked on every course page. Fee, dates and duration are deliberately not stated: they change by batch. */
 export const commonCourseFaqs = [
   {
+    q: "Is this only lectures?",
+    a: "No. We do not just teach, we give you full hands-on experience. In every session you work on real tasks yourself, and every module ends with something you build.",
+  },
+  {
     q: "What is the fee, and when does the next batch start?",
     a: "Fee and batch dates change from batch to batch, so we share them on WhatsApp. Send the admission form and we reply with the current details.",
   },
@@ -35,7 +41,7 @@ export const commonCourseFaqs = [
     a: "For design, coding and AI courses, yes, you will practise a lot between classes. Tell us what you have and we will say whether it is enough.",
   },
   {
-    q: "Will I build real projects or only watch lectures?",
+    q: "Will I build real projects?",
     a: "You build. Every module ends with something you make yourself, and the course finishes with a project for your portfolio.",
   },
 ];
@@ -43,9 +49,10 @@ export const commonCourseFaqs = [
 export const courses: Course[] = [
   {
     slug: "graphic-designing",
+    track: "beginner",
     num: "01",
     name: "Graphic Designing",
-    short: "Logos, posters, brand kits and print-ready files.",
+    short: "Beginner level: design basics, Photoshop, Illustrator and Canva.",
     tagline: "Design logos, posters and brand kits that businesses pay for.",
     seoDescription:
       "Graphic Designing course at Kataf Academy: design basics, Photoshop, Illustrator, branding and print design, ending with a client-ready portfolio.",
@@ -62,17 +69,16 @@ export const courses: Course[] = [
     modules: [
       { name: "Design basics", topics: ["Layout and grids", "Visual hierarchy", "Space and balance", "Reading a client brief"] },
       { name: "Colour and typography", topics: ["Colour theory and palettes", "Pairing fonts", "English and Urdu typography", "Readable text on posters"] },
-      { name: "Photoshop", topics: ["Photo editing and retouching", "Layers and masks", "Social media posts", "Product mockups"] },
-      { name: "Illustrator", topics: ["Vector drawing", "Building a logo", "Icons and illustrations", "Exporting for web and print"] },
-      { name: "Branding", topics: ["Logo systems", "Brand kit and guidelines", "Stationery and visiting cards", "Presenting to a client"] },
-      { name: "Print design", topics: ["Bleed and safe margins", "CMYK and colour matching", "Flex, flyers and packaging", "Sending files to a press"] },
-      { name: "Portfolio and freelancing", topics: ["Case-study layouts", "Behance and online profiles", "Writing proposals", "Pricing your work"] },
+      { name: "Photoshop essentials", topics: ["Photo editing and retouching", "Layers and masks", "Social media posts"] },
+      { name: "Illustrator essentials", topics: ["Vector drawing", "Building a simple logo", "Icons", "Exporting for web and print"] },
+      { name: "Canva and quick designs", topics: ["Templates done properly", "Brand colours and fonts", "Posts, banners and presentations"] },
+      { name: "Your first portfolio", topics: ["Choosing your best work", "Presenting it clearly", "Setting up an online profile"] },
     ],
     projects: [
-      "Logo and brand kit for a local business",
-      "Visiting card and flyer set, ready to print",
-      "Social media pack for a shop",
-      "Portfolio of three case studies",
+      "A logo for a local business",
+      "A visiting card and flyer, ready to print",
+      "A social media pack for a shop",
+      "A starter portfolio of three pieces",
     ],
     tools: ["Photoshop", "Illustrator", "Figma", "Canva"],
     faqs: [
@@ -88,6 +94,7 @@ export const courses: Course[] = [
   },
   {
     slug: "web-development",
+    track: "beginner",
     num: "02",
     name: "Web Development",
     short: "HTML, CSS and JavaScript: build and launch real websites.",
@@ -134,6 +141,7 @@ export const courses: Course[] = [
   },
   {
     slug: "backend-development",
+    track: "advanced",
     num: "03",
     name: "Backend Development",
     short: "APIs, databases, logins and deployment.",
@@ -174,6 +182,7 @@ export const courses: Course[] = [
   },
   {
     slug: "full-stack-development",
+    track: "advanced",
     num: "04",
     name: "Full Stack Development",
     short: "Frontend, backend and database, built into one complete app.",
@@ -183,7 +192,7 @@ export const courses: Course[] = [
     whoFor:
       "Beginners who want one complete path to becoming a developer, and learners who want to build whole products by themselves, as a freelancer or inside a company.",
     prerequisite: "No experience needed. This is the longest path, and it starts from zero.",
-    level: "Starts from zero",
+    level: "Career track",
     internship: true,
     outcomes: [
       "Build a complete web app, frontend to database.",
@@ -216,6 +225,7 @@ export const courses: Course[] = [
   },
   {
     slug: "ai",
+    track: "beginner",
     num: "05",
     name: "AI Skills",
     short: "Use AI for work, automate tasks, and build with AI APIs.",
@@ -256,6 +266,7 @@ export const courses: Course[] = [
   },
   {
     slug: "digital-marketing",
+    track: "beginner",
     num: "06",
     name: "Digital Marketing",
     short: "Get customers online with ads, content and analytics.",
@@ -292,6 +303,133 @@ export const courses: Course[] = [
       {
         q: "Is ad budget included in the fee?",
         a: "No. You will spend a small budget on your own practice campaign. We tell you a sensible amount before you start.",
+      },
+    ],
+  },
+  {
+    slug: "video-editing",
+    track: "beginner",
+    num: "07",
+    name: "Video Editing",
+    short: "Cut, grade and publish videos for social media and clients.",
+    tagline: "Edit videos people want to watch, and publish them.",
+    seoDescription:
+      "Video Editing course at Kataf Academy: editing, audio, colour, captions, short-form video and business videos, with hands-on projects and an internship.",
+    whoFor:
+      "Students, content creators and shop owners who want to make professional videos, and anyone who wants to start freelance editing work.",
+    prerequisite: "No experience needed.",
+    level: "Beginner",
+    internship: true,
+    outcomes: [
+      "Edit a video from raw footage to a finished export.",
+      "Clean up audio and add music, captions and titles.",
+      "Deliver videos that clients can publish straight away.",
+    ],
+    modules: [
+      { name: "Editing basics", topics: ["The timeline and cutting", "Pacing and story", "Organising a project"] },
+      { name: "Audio", topics: ["Cleaning voice recordings", "Music and sound effects", "Voiceovers"] },
+      { name: "Colour", topics: ["Correcting exposure and white balance", "Colour grading", "Matching shots"] },
+      { name: "Titles, captions and motion", topics: ["Titles and lower thirds", "Captions", "Simple motion graphics"] },
+      { name: "Short-form video", topics: ["Reels, TikTok and Shorts", "Vertical framing", "Hooks and retention"] },
+      { name: "Business videos", topics: ["Product videos", "Ads and promos", "Event and wedding highlights"] },
+      { name: "Export and freelancing", topics: ["Export settings by platform", "Delivering to clients", "Pricing and proposals"] },
+    ],
+    projects: [
+      "A short social media video with captions",
+      "A product promo for a local shop",
+      "An event highlight reel",
+      "A portfolio reel of your best work",
+    ],
+    tools: ["Premiere Pro", "DaVinci Resolve", "CapCut", "After Effects basics"],
+    faqs: [
+      {
+        q: "Do I need a powerful computer?",
+        a: "A mid-range laptop is enough to start. Tell us what you have and we will say whether it will cope.",
+      },
+    ],
+  },
+  {
+    slug: "computer-essentials",
+    track: "beginner",
+    num: "08",
+    name: "Computer Essentials",
+    short: "Microsoft Word, Excel, PowerPoint, email and everyday computer skills.",
+    tagline: "Learn the computer skills every office job asks for.",
+    seoDescription:
+      "Computer Essentials course at Kataf Academy: typing, Microsoft Word, Excel and PowerPoint, Google Workspace and email, all hands-on.",
+    whoFor:
+      "School and college students, job seekers, office staff and business owners who want to use a computer confidently for everyday work.",
+    prerequisite: "No experience needed. You do not need to have used a computer before.",
+    level: "Beginner",
+    internship: true,
+    outcomes: [
+      "Write, format and print professional documents.",
+      "Build spreadsheets with formulas, tables and charts.",
+      "Create clear presentations and share files with others.",
+    ],
+    modules: [
+      { name: "Computer and files", topics: ["Using Windows", "Files, folders and storage", "Printers and everyday setup"] },
+      { name: "Typing and shortcuts", topics: ["Touch typing", "Keyboard shortcuts", "Working faster"] },
+      { name: "Internet, email and safety", topics: ["Searching properly", "Professional email", "Passwords and online safety"] },
+      { name: "Microsoft Word", topics: ["Formatting and styles", "CVs, letters and reports", "Tables, images and printing"] },
+      { name: "Microsoft Excel", topics: ["Formulas and functions", "Tables, sorting and filters", "Charts and simple reports"] },
+      { name: "Microsoft PowerPoint", topics: ["Slide design", "Presenting with confidence", "Charts and images"] },
+      { name: "Google Workspace", topics: ["Docs, Sheets and Slides", "Sharing and working together", "Drive and forms"] },
+    ],
+    projects: [
+      "A formatted CV and cover letter in Word",
+      "An expense or sales tracker in Excel",
+      "A ten-slide presentation",
+      "A shared Google Docs and Sheets team project",
+    ],
+    tools: ["Microsoft Word", "Microsoft Excel", "Microsoft PowerPoint", "Google Workspace"],
+    faqs: [
+      {
+        q: "I have never used a computer. Can I join?",
+        a: "Yes. The course starts with the very basics and builds up from there.",
+      },
+    ],
+  },
+  {
+    slug: "graphic-designing-advanced",
+    track: "advanced",
+    num: "09",
+    name: "Advanced Graphic Designing",
+    short: "Brand systems, advanced Photoshop and Illustrator, InDesign, packaging and UI.",
+    tagline: "Move from making designs to leading brand and campaign work.",
+    seoDescription:
+      "Advanced Graphic Designing course at Kataf Academy: brand identity systems, advanced Photoshop and Illustrator, InDesign layouts, packaging, Figma and client workflow, all hands-on.",
+    whoFor:
+      "Designers who already know the basics and want to work at a professional level: brand identities, packaging, editorial layouts and campaigns for real clients.",
+    prerequisite: "You should already be comfortable with Photoshop and Illustrator. If you have finished our beginner Graphic Designing course, you are ready.",
+    level: "Needs design basics",
+    internship: true,
+    outcomes: [
+      "Design a complete brand identity system.",
+      "Produce packaging and editorial layouts that are ready for production.",
+      "Run a design project from brief to final delivery.",
+    ],
+    modules: [
+      { name: "Brand identity systems", topics: ["Brand strategy and research", "Logo systems and variations", "Brand guidelines"] },
+      { name: "Advanced Illustrator", topics: ["Custom lettering and logotypes", "Complex vector illustration", "Patterns and icon sets"] },
+      { name: "Advanced Photoshop", topics: ["Compositing and manipulation", "Professional retouching", "Mockups and presentation"] },
+      { name: "Layout with InDesign", topics: ["Grids and editorial layout", "Brochures, catalogues and books", "Preparing multi-page files"] },
+      { name: "Packaging design", topics: ["Dielines and structure", "Labels and boxes", "Print finishes and production"] },
+      { name: "Visual design in Figma", topics: ["Interface basics", "Design systems", "Social and web campaign visuals"] },
+      { name: "Print production", topics: ["Colour management", "Working with presses", "Pre-press checks"] },
+      { name: "Client workflow and pricing", topics: ["Briefs, rounds and approvals", "Proposals and pricing", "Presenting concepts"] },
+    ],
+    projects: [
+      "A full brand identity with guidelines",
+      "A packaging design with a dieline",
+      "A multi-page brochure or catalogue",
+      "A professional portfolio with case studies",
+    ],
+    tools: ["Photoshop", "Illustrator", "InDesign", "Figma"],
+    faqs: [
+      {
+        q: "Do I need the beginner course first?",
+        a: "Not if you already work comfortably in Photoshop and Illustrator. Tell us what you can do and we will suggest where to start.",
       },
     ],
   },

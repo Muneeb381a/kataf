@@ -8,7 +8,9 @@ export function EnrolCard({ course: c }: { course: Course }) {
   const rows: { k: string; v: React.ReactNode }[] = [
     { k: "Fee", v: c.fee ?? <span className="text-olive">Shared on WhatsApp</span> },
     { k: "Duration", v: c.duration ?? <span className="text-olive">Shared with the batch date</span> },
+    { k: "Track", v: c.track === "advanced" ? "Advanced" : "Beginner" },
     { k: "Level", v: c.level },
+    { k: "Format", v: "100% hands-on" },
     { k: "Projects", v: `${c.projects.length} to build` },
     { k: "Certificate", v: "Yes, on completion" },
     { k: "Internship", v: c.internship ? "Yes, after the course" : "Project showcase" },

@@ -6,8 +6,8 @@ import { HandUnderline } from "@/components/ui/HandUnderline";
 import { Accordion } from "@/components/ui/Accordion";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { CourseCards } from "@/components/sections/CourseCards";
-import { FeeTable, Includes, InternshipPath, TalkFirst } from "@/components/sections/AcademyTrust";
+import { CourseBrowser } from "@/components/sections/CourseBrowser";
+import { FeeTable, HandsOnSection, Includes, InternshipPath, TalkFirst } from "@/components/sections/AcademyTrust";
 import { CourseFan } from "@/components/sections/CourseFan";
 import { CountUp } from "@/components/ui/CountUp";
 import { ApplyForm } from "@/components/sections/ApplyForm";
@@ -17,13 +17,13 @@ import { whatsappLink } from "@/lib/config";
 export const metadata: Metadata = {
   title: "Academy",
   description:
-    "Kataf Academy teaches graphic designing, web development, backend, full stack development, AI skills and digital marketing in Pakistan.",
+    "Kataf Academy teaches graphic designing, video editing, computer essentials, web development, backend, full stack, AI skills and digital marketing in Pakistan. Hands-on, with a certificate and an internship.",
   alternates: { canonical: "/academy" },
 };
 
 const method = [
-  { t: "Learn", d: "A short lesson on one idea, explained with real examples." },
-  { t: "Build", d: "You make something with it straight away, on your own laptop." },
+  { t: "Learn", d: "A short explanation of one idea, with real examples." },
+  { t: "Do it yourself", d: "You work on the task straight away, on your own computer." },
   { t: "Review", d: "We look at your work with you and show what to fix." },
   { t: "Ship", d: "Every course ends with a project you can put in a portfolio." },
 ];
@@ -32,8 +32,10 @@ const paths = [
   { name: "Frontend developer", steps: ["Web Development"] },
   { name: "Backend developer", steps: ["Web Development", "Backend Development"] },
   { name: "Full stack developer", steps: ["Full Stack Development"] },
-  { name: "Designer", steps: ["Graphic Designing"] },
+  { name: "Designer", steps: ["Graphic Designing", "Advanced Graphic Designing"] },
   { name: "Marketer", steps: ["Digital Marketing", "AI Skills"] },
+  { name: "Video editor", steps: ["Video Editing"] },
+  { name: "Office professional", steps: ["Computer Essentials"] },
 ];
 
 const faqs = [
@@ -44,7 +46,7 @@ const faqs = [
   },
   {
     q: "How does the internship work?",
-    a: "After the course you can work on real projects with our team, in the courses where that is possible. We explain the dates and terms at admission, before you pay.",
+    a: "After the course you can work on real projects with our team, We explain the dates and terms at admission, before you pay.",
   },
   {
     q: "I am not sure which course to choose.",
@@ -83,8 +85,7 @@ export default function AcademyPage() {
               Learn the craft <span className="relative inline-block italic text-olive">behind<HandUnderline animated tone="text-wheat" className="-bottom-1 h-[0.15em] md:-bottom-2" /></span> the software.
             </h1>
             <p className="mt-8 max-w-[46ch] text-[18px] leading-relaxed text-muted md:text-[20px]">
-              Graphic designing, web development, backend, full stack, AI and digital marketing. Taught by doing, in a
-              software house that builds real products.
+              Design, video, computer skills, web development, AI and marketing. We do not just teach. You get full hands-on experience, in a software house that builds real products.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Button href="/apply">Apply now</Button>
@@ -124,11 +125,12 @@ export default function AcademyPage() {
       <section id="courses" className="py-16 md:py-24">
         <div className="wrap">
           <SectionLabel num="01">Courses</SectionLabel>
-          <h2 className="h2 mb-12 max-w-[16ch]">Six courses. Pick the one that gets you working.</h2>
-          <CourseCards />
+          <h2 className="h2 mb-12 max-w-[18ch]">Nine courses. Choose your level, then your course.</h2>
+          <CourseBrowser />
         </div>
       </section>
 
+      <HandsOnSection />
       <Includes />
       <InternshipPath />
       <FeeTable />
