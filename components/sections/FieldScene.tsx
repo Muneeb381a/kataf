@@ -187,7 +187,7 @@ export function FieldScene({ items }: { items: FieldItem[] }) {
           viewBox={`0 0 ${W} ${H}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="Wheat growing out of the soil, one stalk for each Kataf product and course"
+          aria-label="Wheat growing out of the soil, one stalk for each Al-Kausar product and course"
           variants={container}
           initial={reduce ? false : "hidden"}
           animate={reduce ? "show" : undefined}

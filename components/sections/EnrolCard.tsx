@@ -36,7 +36,7 @@ export function EnrolCard({ course: c }: { course: Course }) {
           Apply now
         </Button>
         <a
-          href={whatsappLink(`Hi Kataf, I would like the fee and next batch date for ${c.name}.`)}
+          href={whatsappLink(`Hi Al-Kausar, I would like the fee and next batch date for ${c.name}.`)}
           target="_blank"
           rel="noopener noreferrer"
           className="flex w-full items-center justify-between rounded border border-ink px-6 py-3.5 font-medium leading-none transition-colors hover:bg-ink hover:text-paper"

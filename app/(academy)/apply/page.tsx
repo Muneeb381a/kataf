@@ -8,7 +8,7 @@ import { AlKausarLogo } from "@/components/ui/Logo";
 
 export const metadata: Metadata = {
   title: "Apply to the Academy",
-  description: "Apply to a Kataf Academy course: graphic designing, web development, backend, full stack, AI or digital marketing.",
+  description: "Apply to a Al-Kausar Computer Institute course: graphic designing, web development, backend, full stack, AI or digital marketing.",
   alternates: { canonical: "/apply" },
 };
 
@@ -45,7 +45,7 @@ export default async function ApplyPage({ searchParams }: { searchParams: Promis
             <div className="mt-8 border-b border-line pb-6">
               <p className="label text-muted">Prefer to talk first?</p>
               <a
-                href={whatsappLink("Hi Kataf, I have a question about the Academy.")}
+                href={whatsappLink("Hi Al-Kausar, I have a question about the Academy.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-1 inline-flex items-center gap-2 font-medium text-olive"

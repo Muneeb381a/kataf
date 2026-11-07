@@ -6,7 +6,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Case studies from Kataf: the problem, what we built, and what changed.",
+  description: "Case studies from Al-Kausar: the problem, what we built, and what changed.",
   alternates: { canonical: "/work" },
 };
 

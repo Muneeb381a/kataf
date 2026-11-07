@@ -23,7 +23,7 @@ export function ogImage(eyebrow: string, title: string) {
         <div style={{ fontSize: 96, lineHeight: 1, letterSpacing: -3, fontFamily: "Georgia, serif", maxWidth: 940 }}>
           {title}
         </div>
-        <div style={{ fontSize: 40, fontFamily: "Georgia, serif" }}>Kataf</div>
+        <div style={{ fontSize: 40, fontFamily: "Georgia, serif" }}>Al-Kausar</div>
       </div>
     ),
     ogSize,

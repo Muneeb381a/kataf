@@ -19,7 +19,7 @@ import { AlKausarLogo } from "@/components/ui/Logo";
 export const metadata: Metadata = {
   title: "Academy",
   description:
-    "Kataf Academy teaches graphic designing, video editing, computer essentials, web development, backend, full stack, AI skills and digital marketing in Pakistan. Hands-on, with a certificate and an internship.",
+    "Al-Kausar Computer Institute teaches graphic designing, video editing, computer essentials, web development, backend, full stack, AI skills and digital marketing in Pakistan. Hands-on, with a certificate and an internship.",
   alternates: { canonical: "/academy" },
 };
 
@@ -44,7 +44,7 @@ const faqs = [
   ...commonCourseFaqs,
   {
     q: "What does the certificate say?",
-    a: "It carries your name, the course, and Kataf Academy's signature. It is awarded when you complete the course and its final project.",
+    a: "It carries your name, the course, and Al-Kausar Computer Institute's signature. It is awarded when you complete the course and its final project.",
   },
   {
     q: "How does the internship work?",
@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: "Is the Academy part of the software house?",
-    a: "Yes. Kataf builds software for businesses and runs the Academy. What we teach is what we use.",
+    a: "Yes. Al-Kausar builds software for businesses and runs the Academy. What we teach is what we use.",
   },
 ];
 
@@ -82,7 +82,7 @@ export default function AcademyPage() {
             <AlKausarLogo className="mb-8 h-20 w-auto md:h-24" />
             <p className="label mb-7 inline-flex items-center gap-3 rounded border border-olive bg-paper px-3 py-1.5 text-olive">
               <span className="h-1.5 w-1.5 rounded-full bg-olive" aria-hidden="true" />
-              Kataf Academy · Learn · Build · Work
+              Al-Kausar Computer Institute · Learn · Build · Work
             </p>
             <h1 className="display">
               Learn the craft <span className="relative inline-block italic text-olive">behind<HandUnderline animated tone="text-wheat" className="-bottom-1 h-[0.15em] md:-bottom-2" /></span> the software.
@@ -97,7 +97,7 @@ export default function AcademyPage() {
               </Button>
             </div>
             <p className="mt-6">
-              <TextLink href={whatsappLink("Hi Kataf, I have a question about the Academy.")} external>
+              <TextLink href={whatsappLink("Hi Al-Kausar, I have a question about the Academy.")} external>
                 Ask us on WhatsApp first
               </TextLink>
             </p>

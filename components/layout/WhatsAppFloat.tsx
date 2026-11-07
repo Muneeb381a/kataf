@@ -9,10 +9,10 @@ export const WhatsAppIcon = ({ className = "h-6 w-6" }: { className?: string }) 
 export function WhatsAppFloat() {
   return (
     <a
-      href={whatsappLink("Hi Kataf, I found you on your website.")}
+      href={whatsappLink("Hi Al-Kausar, I found you on your website.")}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Kataf on WhatsApp"
+      aria-label="Chat with Al-Kausar on WhatsApp"
       className="group fixed bottom-5 right-5 z-30 flex h-[52px] w-[52px] items-center justify-center rounded-full bg-olive text-white transition-colors duration-200 hover:bg-olive-deep md:bottom-8 md:right-8"
     >
       <span aria-hidden="true" className="pulse-ring pointer-events-none absolute inset-0 rounded-full bg-olive" />

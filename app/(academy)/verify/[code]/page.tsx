@@ -45,14 +45,14 @@ export default async function VerifyResult({ params }: { params: Promise<{ code:
               </p>
               <h1 className="display !text-[44px] md:!text-[72px]">This certificate is genuine.</h1>
               <p className="mt-6 max-w-[48ch] text-muted">
-                It was issued by Kataf Academy to the person below, for completing the course shown.
+                It was issued by Al-Kausar Computer Institute to the person below, for completing the course shown.
               </p>
             </div>
             <div className="lg:col-span-5">
               <div className="relative rounded border border-ink bg-paper shadow-frame">
                 <div className="flex items-center gap-4 border-b border-ink bg-olive-tint px-6 py-4">
                   <AlKausarMark className="h-9 w-auto" />
-                  <p className="label text-olive-deep">Al-Kausar Computer Institute · Kataf Academy<br />Certificate of Completion</p>
+                  <p className="label text-olive-deep">Al-Kausar Computer Institute<br />Certificate of Completion</p>
                 </div>
                 <dl className="px-6">
                   {[
@@ -78,12 +78,12 @@ export default async function VerifyResult({ params }: { params: Promise<{ code:
           <div className="max-w-[640px]">
             <h1 className="display !text-[44px] md:!text-[72px]">This certificate is no longer valid.</h1>
             <p className="mt-6 text-muted">
-              The ID <span className="font-mono">{code}</span> exists, but Kataf Academy has withdrawn it. If you think this
+              The ID <span className="font-mono">{code}</span> exists, but Al-Kausar Computer Institute has withdrawn it. If you think this
               is a mistake, contact us.
             </p>
             <div className="mt-8">
-              <Button href={whatsappLink(`Hi Kataf, about certificate ${code}.`)} external>
-                Contact Kataf
+              <Button href={whatsappLink(`Hi Al-Kausar, about certificate ${code}.`)} external>
+                Contact Al-Kausar
               </Button>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default async function VerifyResult({ params }: { params: Promise<{ code:
             <h1 className="display !text-[44px] md:!text-[72px]">Check unavailable right now.</h1>
             <p className="mt-6 text-muted">We could not reach the certificate records. Please try again shortly, or contact us.</p>
             <div className="mt-8">
-              <Button href={whatsappLink(`Hi Kataf, please verify certificate ${code}.`)} external>
+              <Button href={whatsappLink(`Hi Al-Kausar, please verify certificate ${code}.`)} external>
                 Ask on WhatsApp
               </Button>
             </div>

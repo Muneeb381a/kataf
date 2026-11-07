@@ -59,7 +59,7 @@ export const products: Product[] = [
     ],
     promise: "Run the whole press from one screen: job cards, rates, advances and customer balances.",
     seoDescription:
-      "Printing ERP by Kataf: job cards, rate estimates, customer ledger, advances, stock and WhatsApp updates for printing presses in Pakistan.",
+      "Printing ERP by Al-Kausar: job cards, rate estimates, customer ledger, advances, stock and WhatsApp updates for printing presses in Pakistan.",
     whoFor:
       "Offset and digital printing presses, from a two-machine shop to a press with a night shift. If your job cards are carbon slips, your rates live in the owner's head and customers keep calling to ask \"mera kaam ho gaya?\", this is built for you.",
     tags: ["Offset presses", "Digital printers", "Flex and signage", "Packaging units"],
@@ -201,7 +201,7 @@ export const products: Product[] = [
     ],
     promise: "Every customer, guarantor and due date in one place, so recovery stops depending on memory.",
     seoDescription:
-      "Installment Manager by Kataf: customer and guarantor records, installment plans, recovery lists, WhatsApp reminders and credit history for shops in Pakistan.",
+      "Installment Manager by Al-Kausar: customer and guarantor records, installment plans, recovery lists, WhatsApp reminders and credit history for shops in Pakistan.",
     whoFor:
       "Shops that sell on installments: electronics, furniture, motorcycles, mobile phones, appliances. If your plans are in a register, your recovery staff work from a torn page and you only learn a customer is late when the month is over, this is for you.",
     tags: ["Electronics", "Furniture", "Mobile shops", "Motorcycle dealers"],
@@ -334,7 +334,7 @@ export const products: Product[] = [
     ],
     promise: "Patient history, prescription and bill in one flow, from the moment the patient walks in.",
     seoDescription:
-      "Doctor ERP by Kataf: patient records, appointments, prescriptions, billing and daily collection reports for clinics in Pakistan.",
+      "Doctor ERP by Al-Kausar: patient records, appointments, prescriptions, billing and daily collection reports for clinics in Pakistan.",
     whoFor:
       "Single-doctor clinics and small multi-doctor practices. If patient files sit in a drawer, the prescription pad is the only record and the day's collection is counted from slips at night, this is for you.",
     tags: ["Single-doctor clinics", "Multi-doctor practices", "Dental clinics", "Small labs"],

@@ -7,7 +7,7 @@ import { AlKausarLogo } from "@/components/ui/Logo";
 
 export const metadata: Metadata = {
   title: "Verify a certificate",
-  description: "Check that a Kataf Academy certificate is genuine using its certificate ID.",
+  description: "Check that a Al-Kausar Computer Institute certificate is genuine using its certificate ID.",
   alternates: { canonical: "/verify" },
 };
 
@@ -21,7 +21,7 @@ export default function VerifyPage() {
           <SectionLabel>Certificate verification</SectionLabel>
           <h1 className="display max-w-[12ch]">Is this certificate real?</h1>
           <p className="mt-8 max-w-[44ch] text-muted">
-            Every Kataf Academy certificate has a unique ID printed on it. Type it here and we will show you who it was
+            Every Al-Kausar Computer Institute certificate has a unique ID printed on it. Type it here and we will show you who it was
             issued to, for which course, and when.
           </p>
           <div className="mt-10 max-w-[520px]">

@@ -10,5 +10,5 @@ export function generateStaticParams() {
 
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
   const p = getProduct((await params).slug);
-  return ogImage(`Kataf · Product ${p?.num ?? ""}`, p ? `${p.name}. ${p.outcomes[0]}` : "Kataf");
+  return ogImage(`Al-Kausar · Product ${p?.num ?? ""}`, p ? `${p.name}. ${p.outcomes[0]}` : "Al-Kausar");
 }

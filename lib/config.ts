@@ -1,5 +1,5 @@
 export const site = {
-  name: "Kataf",
+  name: "Al-Kausar",
   domain: "kataf.pk", // TODO confirm .pk or .com
   whatsapp: "92XXXXXXXXXX", // TODO
   email: "hello@kataf.pk", // TODO
@@ -9,7 +9,7 @@ export const site = {
 
 export const siteUrl = `https://${site.domain}`;
 
-export const whatsappLink = (text = "Hi Kataf, I would like a quote.") =>
+export const whatsappLink = (text = "Hi Al-Kausar, I would like a quote.") =>
   `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
 
 // Display form of the WhatsApp number, e.g. +92 XXX XXXXXXX

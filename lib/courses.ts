@@ -55,7 +55,7 @@ export const courses: Course[] = [
     short: "Beginner level: design basics, Photoshop, Illustrator and Canva.",
     tagline: "Design logos, posters and brand kits that businesses pay for.",
     seoDescription:
-      "Graphic Designing course at Kataf Academy: design basics, Photoshop, Illustrator, branding and print design, ending with a client-ready portfolio.",
+      "Graphic Designing course at Al-Kausar Computer Institute: design basics, Photoshop, Illustrator, branding and print design, ending with a client-ready portfolio.",
     whoFor:
       "School and college students, press and shop staff who want to move into design, and anyone who wants to start freelance design work. You do not need to draw. You need to be willing to look closely.",
     prerequisite: "No experience needed. You start from zero.",
@@ -100,7 +100,7 @@ export const courses: Course[] = [
     short: "HTML, CSS and JavaScript: build and launch real websites.",
     tagline: "Build fast, good-looking websites from scratch, and put them online.",
     seoDescription:
-      "Web Development (frontend) course at Kataf Academy: HTML, CSS, JavaScript, responsive design, Git and deployment, with a real website as your final project.",
+      "Web Development (frontend) course at Al-Kausar Computer Institute: HTML, CSS, JavaScript, responsive design, Git and deployment, with a real website as your final project.",
     whoFor:
       "Beginners who want to become frontend developers, students looking for a first tech skill, and shop or clinic owners who want to understand how their own website is made.",
     prerequisite: "No experience needed. You should be comfortable using a computer.",
@@ -147,7 +147,7 @@ export const courses: Course[] = [
     short: "APIs, databases, logins and deployment.",
     tagline: "Build the server side: APIs, databases and secure logins.",
     seoDescription:
-      "Backend Development course at Kataf Academy: Node.js, REST APIs, PostgreSQL, authentication, security and deployment, ending with a real API project.",
+      "Backend Development course at Al-Kausar Computer Institute: Node.js, REST APIs, PostgreSQL, authentication, security and deployment, ending with a real API project.",
     whoFor:
       "People who already know basic JavaScript and want to build what runs behind a website or app: orders, users, payments and reports.",
     prerequisite: "Basic JavaScript. If you have finished our Web Development course, you are ready.",
@@ -188,7 +188,7 @@ export const courses: Course[] = [
     short: "Frontend, backend and database, built into one complete app.",
     tagline: "Learn frontend and backend together, and build a complete application.",
     seoDescription:
-      "Full Stack Development course at Kataf Academy: HTML, CSS, JavaScript, React, Next.js, Node.js, PostgreSQL and deployment, with a complete app as your capstone.",
+      "Full Stack Development course at Al-Kausar Computer Institute: HTML, CSS, JavaScript, React, Next.js, Node.js, PostgreSQL and deployment, with a complete app as your capstone.",
     whoFor:
       "Beginners who want one complete path to becoming a developer, and learners who want to build whole products by themselves, as a freelancer or inside a company.",
     prerequisite: "No experience needed. This is the longest path, and it starts from zero.",
@@ -231,7 +231,7 @@ export const courses: Course[] = [
     short: "Use AI for work, automate tasks, and build with AI APIs.",
     tagline: "Use AI to work faster, then learn to build things with it.",
     seoDescription:
-      "AI Skills course at Kataf Academy: prompting, AI tools for work, automation, and building assistants with AI APIs.",
+      "AI Skills course at Al-Kausar Computer Institute: prompting, AI tools for work, automation, and building assistants with AI APIs.",
     whoFor:
       "Students, freelancers and business owners who want to use AI properly in their work, and learners with some coding who want to build AI features into real products.",
     prerequisite: "The tools and prompting modules need no experience. The building modules assume basic programming.",
@@ -272,7 +272,7 @@ export const courses: Course[] = [
     short: "Get customers online with ads, content and analytics.",
     tagline: "Get customers online: social media, ads, search and WhatsApp.",
     seoDescription:
-      "Digital Marketing course at Kataf Academy: social media, Meta ads, Google search, content, AI tools for marketing, WhatsApp and analytics.",
+      "Digital Marketing course at Al-Kausar Computer Institute: social media, Meta ads, Google search, content, AI tools for marketing, WhatsApp and analytics.",
     whoFor:
       "Shop and business owners who want to bring in customers online, students who want a marketing career, and freelancers who want to run campaigns for clients.",
     prerequisite: "No experience needed.",
@@ -314,7 +314,7 @@ export const courses: Course[] = [
     short: "Cut, grade and publish videos for social media and clients.",
     tagline: "Edit videos people want to watch, and publish them.",
     seoDescription:
-      "Video Editing course at Kataf Academy: editing, audio, colour, captions, short-form video and business videos, with hands-on projects and an internship.",
+      "Video Editing course at Al-Kausar Computer Institute: editing, audio, colour, captions, short-form video and business videos, with hands-on projects and an internship.",
     whoFor:
       "Students, content creators and shop owners who want to make professional videos, and anyone who wants to start freelance editing work.",
     prerequisite: "No experience needed.",
@@ -356,7 +356,7 @@ export const courses: Course[] = [
     short: "Microsoft Word, Excel, PowerPoint, email and everyday computer skills.",
     tagline: "Learn the computer skills every office job asks for.",
     seoDescription:
-      "Computer Essentials course at Kataf Academy: typing, Microsoft Word, Excel and PowerPoint, Google Workspace and email, all hands-on.",
+      "Computer Essentials course at Al-Kausar Computer Institute: typing, Microsoft Word, Excel and PowerPoint, Google Workspace and email, all hands-on.",
     whoFor:
       "School and college students, job seekers, office staff and business owners who want to use a computer confidently for everyday work.",
     prerequisite: "No experience needed. You do not need to have used a computer before.",
@@ -398,7 +398,7 @@ export const courses: Course[] = [
     short: "Brand systems, advanced Photoshop and Illustrator, InDesign, packaging and UI.",
     tagline: "Move from making designs to leading brand and campaign work.",
     seoDescription:
-      "Advanced Graphic Designing course at Kataf Academy: brand identity systems, advanced Photoshop and Illustrator, InDesign layouts, packaging, Figma and client workflow, all hands-on.",
+      "Advanced Graphic Designing course at Al-Kausar Computer Institute: brand identity systems, advanced Photoshop and Illustrator, InDesign layouts, packaging, Figma and client workflow, all hands-on.",
     whoFor:
       "Designers who already know the basics and want to work at a professional level: brand identities, packaging, editorial layouts and campaigns for real clients.",
     prerequisite: "You should already be comfortable with Photoshop and Illustrator. If you have finished our beginner Graphic Designing course, you are ready.",

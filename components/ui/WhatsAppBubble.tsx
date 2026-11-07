@@ -1,6 +1,6 @@
 import { WhatsAppIcon } from "@/components/layout/WhatsAppFloat";
 
-/** A sample of a message a Kataf product sends. Always marked as a sample. */
+/** A sample of a message a Al-Kausar product sends. Always marked as a sample. */
 export function WhatsAppBubble({ label, text, className = "" }: { label: string; text: string; className?: string }) {
   return (
     <figure

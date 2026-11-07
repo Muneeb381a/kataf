@@ -51,7 +51,7 @@ export async function POST(req: Request) {
   }
 
   const summary =
-    `New Kataf lead\n${d.name} · ${d.phone}\nInterested in: ${d.interestedIn}\n` +
+    `New Al-Kausar lead\n${d.name} · ${d.phone}\nInterested in: ${d.interestedIn}\n` +
     `Business: ${d.businessType || "-"} · Budget: ${d.budget || "-"}\n\n${d.message}\n\nFrom: ${d.sourcePage || "-"}`;
 
   const [emailed, whatsapped] = await Promise.all([sendEmail(`New lead: ${d.interestedIn} · ${d.name}`, summary), sendWhatsApp(summary)]);

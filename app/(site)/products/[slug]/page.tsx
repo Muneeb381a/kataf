@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: p.name,
     description: p.seoDescription,
     alternates: { canonical: `/products/${p.slug}` },
-    openGraph: { title: `${p.name} | Kataf`, description: p.seoDescription },
+    openGraph: { title: `${p.name} | Al-Kausar`, description: p.seoDescription },
   };
 }
 
@@ -41,7 +41,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     url: `${siteUrl}/products/${p.slug}`,
-    publisher: { "@type": "Organization", name: "Kataf" },
+    publisher: { "@type": "Organization", name: "Al-Kausar" },
   };
   const faqLd = {
     "@context": "https://schema.org",
@@ -66,7 +66,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <p className="mt-6 max-w-[40ch] font-serif text-[24px] leading-snug text-muted md:text-[32px]">{p.promise}</p>
           <div id="demo" className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
             <Button href={`/contact?interest=${encodeURIComponent(p.interest)}`}>Get a Quote</Button>
-            <TextLink href={whatsappLink(`Hi Kataf, I would like to see a demo of ${p.name}.`)} external>
+            <TextLink href={whatsappLink(`Hi Al-Kausar, I would like to see a demo of ${p.name}.`)} external>
               Book a demo
             </TextLink>
           </div>
@@ -119,7 +119,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </ul>
             </Reveal>
             <Reveal className="lg:col-span-8" delay={0.05}>
-              <h3 className="label border-b border-ink pb-3 text-olive">After, in Kataf</h3>
+              <h3 className="label border-b border-ink pb-3 text-olive">After, in Al-Kausar</h3>
               <BrowserFrame url={`${url}/${p.modules[0].shot.slice(3)}`} className="mt-6">
                 <Screen src={`${p.dir}/${p.modules[0].shot}`} label={`${p.name} ${p.modules[0].name}`} />
               </BrowserFrame>

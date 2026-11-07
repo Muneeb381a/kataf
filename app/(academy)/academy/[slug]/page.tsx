@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${c.name} course`,
     description: c.seoDescription,
     alternates: { canonical: `/academy/${c.slug}` },
-    openGraph: { title: `${c.name} course | Kataf Academy`, description: c.seoDescription },
+    openGraph: { title: `${c.name} course | Al-Kausar Computer Institute`, description: c.seoDescription },
   };
 }
 
@@ -38,7 +38,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     ...c.faqs,
     {
       q: "Do I get a certificate?",
-      a: "Yes. When you complete the course and its final project, you receive a Kataf Academy certificate with your name, the course and a unique ID. Anyone can check that ID at /verify.",
+      a: "Yes. When you complete the course and its final project, you receive a Al-Kausar Computer Institute certificate with your name, the course and a unique ID. Anyone can check that ID at /verify.",
     },
     {
       q: c.internship ? "Is there an internship after the course?" : "Is there an internship for this course?",
@@ -58,7 +58,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
     name: c.name,
     description: c.seoDescription,
     url: `${siteUrl}/academy/${c.slug}`,
-    provider: { "@type": "Organization", name: "Kataf", sameAs: siteUrl },
+    provider: { "@type": "Organization", name: "Al-Kausar", sameAs: siteUrl },
     ...(c.fee ? { offers: { "@type": "Offer", price: c.fee.replace(/[^\d]/g, ""), priceCurrency: "PKR" } } : {}),
   };
   const faqLd = {
@@ -87,7 +87,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             <p className="mt-6 max-w-[40ch] font-serif text-[24px] leading-snug text-muted md:text-[32px]">{c.tagline}</p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
               <Button href={`/apply?course=${c.slug}`}>Apply now</Button>
-              <TextLink href={whatsappLink(`Hi Kataf, I would like to know about the ${c.name} course.`)} external>
+              <TextLink href={whatsappLink(`Hi Al-Kausar, I would like to know about the ${c.name} course.`)} external>
                 Ask on WhatsApp
               </TextLink>
             </div>
@@ -215,7 +215,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
               <div>
                 <h2 className="h3 !text-[32px]">A certificate you earned.</h2>
                 <p className="mt-4 text-muted">
-                  Finish every module and the final project, and you receive a Kataf Academy certificate with your name, the course and a
+                  Finish every module and the final project, and you receive a Al-Kausar Computer Institute certificate with your name, the course and a
                   unique ID. It is awarded for completion, not for attendance.
                 </p>
                 <Link href="/verify" className="link-quiet mt-5 inline-block font-medium text-olive">
@@ -230,7 +230,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             <SectionLabel num="05">Internship</SectionLabel>
             <h2 className="h2 mb-4 max-w-[16ch]">Then work on the real thing.</h2>
             <p className="mb-10 max-w-[50ch] text-muted">
-              Kataf is a working software house, so an internship follows the course. We explain the dates and terms at
+              Al-Kausar is a working software house, so an internship follows the course. We explain the dates and terms at
               admission, before you pay.
             </p>
 

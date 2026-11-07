@@ -7,7 +7,7 @@ import { WhatsAppIcon } from "@/components/layout/WhatsAppFloat";
 
 export const metadata: Metadata = {
   title: "Get a Quote",
-  description: "Tell Kataf about your business and get a quote for Printing ERP, Installment Manager, Doctor ERP, custom software or a website.",
+  description: "Tell Al-Kausar about your business and get a quote for Printing ERP, Installment Manager, Doctor ERP, custom software or a website.",
   alternates: { canonical: "/contact" },
 };
 

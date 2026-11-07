@@ -1,4 +1,4 @@
-// Detailed syllabus content for the Kataf Academy PDF. Durations are estimates.
+// Detailed syllabus content for the Al-Kausar Computer Institute PDF. Durations are estimates.
 // A session is 2 hours. "perWeek" is sessions per week.
 
 const m = (name, weeks, topics, lab, deliverable) => ({ name, weeks, topics, lab, deliverable });

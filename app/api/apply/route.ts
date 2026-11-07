@@ -51,7 +51,7 @@ export async function POST(req: Request) {
   }
 
   const summary =
-    `New Kataf Academy application\n${d.name} · ${d.phone}\nCourse: ${d.course}\n` +
+    `New Al-Kausar Computer Institute application\n${d.name} · ${d.phone}\nCourse: ${d.course}\n` +
     `City: ${d.city || "-"} · Background: ${d.background || "-"}\nBatch: ${d.batch || "-"} · Slot: ${d.slot || "-"}\n\n${d.message || "(no message)"}\n\nFrom: ${d.sourcePage || "-"}`;
 
   const [emailed, whatsapped] = await Promise.all([

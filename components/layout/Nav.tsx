@@ -69,7 +69,7 @@ export function Nav({ variant = "software" }: { variant?: NavVariant }) {
       <div className="wrap flex h-16 items-center justify-between">
         <Link
           href={variant === "academy" ? "/academy" : "/"}
-          aria-label={variant === "academy" ? "Al-Kausar Computer Institute, Kataf Academy, home" : "Kataf, home"}
+          aria-label={variant === "academy" ? "Al-Kausar Computer Institute, home" : "Al-Kausar, home"}
           className="flex items-center gap-3 text-ink"
         >
           {variant === "academy" ? <AcademyWordmark /> : <Wordmark />}

@@ -23,7 +23,7 @@ export function AcademyDoor() {
           <p className="label mb-5 flex items-center gap-3 text-olive">
             <span>04</span>
             <span className="h-px w-8 bg-olive" aria-hidden="true" />
-            Kataf Academy
+            Al-Kausar Computer Institute
           </p>
           <h2 className="h2 max-w-[16ch]">
             Want to learn the <span className="italic text-olive">craft</span>? We teach it.

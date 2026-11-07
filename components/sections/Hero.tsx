@@ -58,7 +58,7 @@ export function Hero() {
             </div>
 
             <div style={d(".46s")} className="rise mt-9">
-              <TextLink href={whatsappLink("Hi Kataf, I would like to see a demo.")} external>
+              <TextLink href={whatsappLink("Hi Al-Kausar, I would like to see a demo.")} external>
                 Ask for a demo on WhatsApp
               </TextLink>
             </div>

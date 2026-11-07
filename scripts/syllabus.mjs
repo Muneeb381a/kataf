@@ -1,5 +1,5 @@
-// Builds the detailed Kataf Academy syllabus PDF from scripts/syllabus-data.mjs.
-//   npm run syllabus  ->  syllabus/Kataf-Academy-Syllabus.pdf
+// Builds the detailed Al-Kausar Computer Institute syllabus PDF from scripts/syllabus-data.mjs.
+//   npm run syllabus  ->  syllabus/Al-Kausar-Syllabus.pdf
 // This is a hand-out file. It is not served by the website.
 import puppeteer from "puppeteer-core";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
@@ -103,7 +103,7 @@ const stat = (n, l) => `<div><b>${n}</b><span class="mono">${l}</span></div>`;
 
 const cover = `<section class="cover">
   <div class="sun"></div><div class="sun2"></div>
-  <div style="position:relative;display:inline-flex;align-items:center;gap:6mm"><div style="background:var(--paper);border-radius:2mm;padding:5mm 7mm"><img src="${logoFull}" style="height:30mm;display:block"></div><span class="mono" style="border:.3mm solid var(--paper);padding:1mm 2.5mm;border-radius:1mm">Kataf Academy</span></div>
+  <div style="position:relative;display:inline-flex;align-items:center;gap:6mm"><div style="background:var(--paper);border-radius:2mm;padding:5mm 7mm"><img src="${logoFull}" style="height:30mm;display:block"></div><span class="mono" style="border:.3mm solid var(--paper);padding:1mm 2.5mm;border-radius:1mm">Academy</span></div>
   <div class="big serif">Course<br/>Syllabus<br/><i>${new Date().getFullYear()}</i></div>
   <p style="font-size:12.5pt;margin-top:12mm;max-width:108mm;line-height:1.5;position:relative;color:#f6e6c9">${courses.length} hands-on courses, beginner and advanced, with weekly plans, estimated durations, projects and an internship for every course.</p>
   <div class="mono" style="position:absolute;left:22mm;bottom:20mm;color:#f6e6c9">${esc(site.city)} · ${esc(site.domain)}</div>
@@ -226,7 +226,7 @@ const back = `<section style="background:var(--deep);color:var(--paper);padding:
 </section>`;
 
 const body = front + courses.map(courseHtml).join("");
-const head = `<!doctype html><html><head><meta charset="utf-8"><title>Al-Kausar Computer Institute · Kataf Academy Syllabus</title>
+const head = `<!doctype html><html><head><meta charset="utf-8"><title>Al-Kausar Computer Institute Syllabus</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
 <style>${css}</style></head>`;
 
@@ -275,9 +275,9 @@ pages.forEach((p, i) => {
   const grey = rgb(0.42, 0.35, 0.28);
   const mh = 15;
   p.drawImage(markImg, { x: 45, y: 17, width: mh * (640 / 345), height: mh });
-  p.drawText("AL-KAUSAR COMPUTER INSTITUTE  -  KATAF ACADEMY  -  SYLLABUS", { x: 45 + mh * (640 / 345) + 8, y: 22, size: 7, font, color: grey });
+  p.drawText("AL-KAUSAR COMPUTER INSTITUTE  -  SYLLABUS", { x: 45 + mh * (640 / 345) + 8, y: 22, size: 7, font, color: grey });
   const n = `${i + 1} / ${total}`;
   p.drawText(n, { x: width - 45 - font.widthOfTextAtSize(n, 7), y: 22, size: 7, font, color: grey });
 });
-writeFileSync("syllabus/Kataf-Academy-Syllabus.pdf", await out.save());
-console.log(`Saved syllabus/Kataf-Academy-Syllabus.pdf (${total} pages)`);
+writeFileSync("syllabus/Al-Kausar-Syllabus.pdf", await out.save());
+console.log(`Saved syllabus/Al-Kausar-Syllabus.pdf (${total} pages)`);

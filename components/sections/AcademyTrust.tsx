@@ -104,7 +104,7 @@ export function InternshipPath() {
           Learn it. Then do it for <span className="italic text-wheat">real</span>.
         </h2>
         <p className="mt-6 max-w-[54ch] text-paper/70">
-          Kataf is a working software house, so an internship follows every course. You work alongside the team on real
+          Al-Kausar is a working software house, so an internship follows every course. You work alongside the team on real
           tasks, with feedback, and leave with experience you can describe in an interview.
         </p>
 
@@ -188,7 +188,7 @@ export function FeeTable() {
                   <td className="pr-4 font-medium">
                     {c.fee ?? (
                       <a
-                        href={whatsappLink(`Hi Kataf, what is the fee for ${c.name}?`)}
+                        href={whatsappLink(`Hi Al-Kausar, what is the fee for ${c.name}?`)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="link-quiet text-olive"
@@ -224,7 +224,7 @@ export function TalkFirst() {
           <ul className="mt-8 border-t border-ink">
             <li className="flex items-baseline justify-between gap-4 border-b border-line py-3.5">
               <span className="label text-muted">WhatsApp</span>
-              <a href={whatsappLink("Hi Kataf, I have a question about the Academy.")} target="_blank" rel="noopener noreferrer" className="font-medium text-olive">
+              <a href={whatsappLink("Hi Al-Kausar, I have a question about the Academy.")} target="_blank" rel="noopener noreferrer" className="font-medium text-olive">
                 {whatsappDisplay}
               </a>
             </li>

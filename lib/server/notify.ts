@@ -9,7 +9,7 @@ export async function sendEmail(subject: string, text: string) {
   if (!key) return false;
   try {
     const { error } = await new Resend(key).emails.send({
-      from: process.env.RESEND_FROM ?? "Kataf Website <onboarding@resend.dev>",
+      from: process.env.RESEND_FROM ?? "Al-Kausar Website <onboarding@resend.dev>",
       to: process.env.LEAD_TO_EMAIL ?? site.email,
       subject,
       text,

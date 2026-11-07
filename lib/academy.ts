@@ -1,4 +1,4 @@
-/** What every Kataf Academy course includes, and how admission works. */
+/** What every Al-Kausar Computer Institute course includes, and how admission works. */
 export const includes = [
   {
     t: "Learn by building",
@@ -6,7 +6,7 @@ export const includes = [
   },
   {
     t: "Certificate on completion",
-    d: "When you finish the course and its final project, you receive a Kataf Academy certificate with a unique ID. Anyone can check it online.",
+    d: "When you finish the course and its final project, you receive a Al-Kausar Computer Institute certificate with a unique ID. Anyone can check it online.",
   },
   {
     t: "Internship",

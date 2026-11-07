@@ -6,7 +6,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Kataf is a software house and academy in Pakistan. We build software for presses, shops and clinics, and teach design, web development, AI and marketing.",
+  description: "Al-Kausar is a software house and academy in Pakistan. We build software for presses, shops and clinics, and teach design, web development, AI and marketing.",
   alternates: { canonical: "/about" },
 };
 
@@ -31,13 +31,12 @@ export default function AboutPage() {
           <div className="lg:col-span-4">
             <div className="overflow-hidden rounded border border-ink shadow-frame">
               {/* Replace with /public/screens/about/founder.webp (1600x1000) */}
-              <Screen src="about/founder" label="Founder photo" alt="The founder of Kataf" />
+              <Screen src="about/founder" label="Founder photo" alt="The founder of Al-Kausar" />
             </div>
           </div>
           <div className="lg:col-span-6 lg:col-start-6">
             <p className="font-serif text-[26px] leading-snug tracking-[-0.01em] md:text-[34px]">
-              Kataf means harvest. We picked the name because most of the businesses we meet work hard all season, and too
-              little of it reaches them.
+              We want the businesses we meet, who work hard all season, to see more of that work come back to them.
             </p>
             <div className="mt-8 space-y-5 text-muted">
               <p>
@@ -50,7 +49,7 @@ export default function AboutPage() {
                 and fix it while you can still change your mind.
               </p>
               <p>
-                Kataf Academy came from the same place. The people who build the software also teach design, web
+                Al-Kausar Computer Institute came from the same place. The people who build the software also teach design, web
                 development, full stack, AI and marketing, so students learn what is actually used in work.
               </p>
             </div>

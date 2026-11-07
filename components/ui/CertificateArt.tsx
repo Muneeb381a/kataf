@@ -3,7 +3,7 @@ import { site } from "@/lib/config";
 /** A sample certificate, drawn in code. Always labelled as a sample so nobody mistakes it for a real one. */
 export function CertificateArt({ course = "Course name", className = "" }: { course?: string; className?: string }) {
   return (
-    <svg viewBox="0 0 480 340" className={className} role="img" aria-label={`Sample Kataf Academy certificate for ${course}`}>
+    <svg viewBox="0 0 480 340" className={className} role="img" aria-label={`Sample Al-Kausar Computer Institute certificate for ${course}`}>
       <rect x="8" y="8" width="464" height="324" className="fill-paper stroke-ink" strokeWidth="2" />
       <rect x="22" y="22" width="436" height="296" className="fill-none stroke-olive" strokeWidth="1.2" />
       <rect x="28" y="28" width="424" height="284" className="fill-none stroke-olive" strokeWidth="0.6" strokeDasharray="3 4" />
@@ -21,7 +21,7 @@ export function CertificateArt({ course = "Course name", className = "" }: { cou
         AL-KAUSAR COMPUTER INSTITUTE
       </text>
       <text x="240" y="93" textAnchor="middle" className="fill-olive font-mono" fontSize="7.5" letterSpacing="3">
-        KATAF ACADEMY
+        ACADEMY
       </text>
 
       <text x="240" y="132" textAnchor="middle" className="fill-ink font-serif" fontSize="38">
