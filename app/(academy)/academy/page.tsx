@@ -14,6 +14,7 @@ import { CountUp } from "@/components/ui/CountUp";
 import { ApplyForm } from "@/components/sections/ApplyForm";
 import { commonCourseFaqs, courses } from "@/lib/courses";
 import { whatsappLink } from "@/lib/config";
+import { AlKausarLogo } from "@/components/ui/Logo";
 
 export const metadata: Metadata = {
   title: "Academy",
@@ -78,6 +79,7 @@ export default function AcademyPage() {
 
         <div className="wrap relative grid items-center gap-14 pb-16 pt-12 md:pt-20 lg:grid-cols-12 lg:gap-x-6">
           <div className="lg:col-span-6">
+            <AlKausarLogo className="mb-8 h-20 w-auto md:h-24" />
             <p className="label mb-7 inline-flex items-center gap-3 rounded border border-olive bg-paper px-3 py-1.5 text-olive">
               <span className="h-1.5 w-1.5 rounded-full bg-olive" aria-hidden="true" />
               Kataf Academy · Learn · Build · Work

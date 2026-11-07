@@ -12,6 +12,8 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&l
 const chrome = ["C:/Program Files/Google/Chrome/Application/chrome.exe", "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"].find(existsSync);
 if (!chrome) throw new Error("Chrome or Edge not found");
 
+const dataUri = (f) => "data:image/png;base64," + readFileSync(f).toString("base64");
+const logoFull = dataUri("public/logo/alkausar.png");
 const markPath = readFileSync("components/ui/Logo.tsx", "utf8").match(/MARK_PATH =\s*\n?\s*"([^"]+)"/)[1];
 const mark = (w = 26, h = 24) => `<svg viewBox="70 70 1270 1180" width="${w}" height="${h}"><path fill="currentColor" fill-rule="evenodd" d="${markPath}"/></svg>`;
 
@@ -66,7 +68,7 @@ td { padding: 2.1mm 2mm 2.1mm 0; border-bottom: .25mm solid var(--line); vertica
 td.r, th.r { text-align: right; white-space: nowrap }
 tr { break-inside: avoid }
 .cover { height: 297mm; background: var(--deep); color: var(--paper); padding: 22mm; position: relative; overflow: hidden }
-.cover .big { font-size: 64pt; line-height: .98; margin-top: 46mm; position: relative }
+.cover .big { font-size: 64pt; line-height: .98; margin-top: 34mm; position: relative }
 .cover .big i { color: var(--wheat) }
 .sun { position: absolute; right: -40mm; bottom: -40mm; width: 150mm; height: 150mm; border-radius: 50%; background: var(--wheat) }
 .sun2 { position: absolute; right: -22mm; bottom: -22mm; width: 114mm; height: 114mm; border-radius: 50%; border: 1.2mm solid var(--deep) }
@@ -101,7 +103,7 @@ const stat = (n, l) => `<div><b>${n}</b><span class="mono">${l}</span></div>`;
 
 const cover = `<section class="cover">
   <div class="sun"></div><div class="sun2"></div>
-  <div style="display:flex;align-items:center;gap:3mm;position:relative"><span style="color:var(--wheat)">${mark()}</span><span class="serif" style="font-size:20pt">Kataf</span><span class="mono" style="border:.3mm solid var(--paper);padding:1mm 2.5mm;border-radius:1mm;margin-left:2mm">Academy</span></div>
+  <div style="position:relative;display:inline-flex;align-items:center;gap:6mm"><div style="background:var(--paper);border-radius:2mm;padding:5mm 7mm"><img src="${logoFull}" style="height:30mm;display:block"></div><span class="mono" style="border:.3mm solid var(--paper);padding:1mm 2.5mm;border-radius:1mm">Kataf Academy</span></div>
   <div class="big serif">Course<br/>Syllabus<br/><i>${new Date().getFullYear()}</i></div>
   <p style="font-size:12.5pt;margin-top:12mm;max-width:108mm;line-height:1.5;position:relative;color:#f6e6c9">${courses.length} hands-on courses, beginner and advanced, with weekly plans, estimated durations, projects and an internship for every course.</p>
   <div class="mono" style="position:absolute;left:22mm;bottom:20mm;color:#f6e6c9">${esc(site.city)} · ${esc(site.domain)}</div>
@@ -213,6 +215,7 @@ const courseHtml = (c) => {
 };
 
 const back = `<section style="background:var(--deep);color:var(--paper);padding:22mm 22mm;height:297mm">
+  <div style="background:var(--paper);display:inline-block;border-radius:2mm;padding:4mm 6mm;margin-bottom:14mm"><img src="${logoFull}" style="height:24mm;display:block"></div>
   <p class="mono" style="color:var(--wheat)">Join the Academy</p>
   <h2 class="serif" style="font-size:38pt;line-height:1.02;margin-top:5mm;max-width:150mm">Ready to start? <i style="color:var(--wheat)">Apply.</i></h2>
   <p style="font-size:11.5pt;margin-top:6mm;max-width:130mm;color:#f6e6c9">Send the admission form on our website or message us on WhatsApp. We reply with the fee, the next batch dates and what to bring, in writing, before you decide.</p>
@@ -223,7 +226,7 @@ const back = `<section style="background:var(--deep);color:var(--paper);padding:
 </section>`;
 
 const body = front + courses.map(courseHtml).join("");
-const head = `<!doctype html><html><head><meta charset="utf-8"><title>Kataf Academy Syllabus</title>
+const head = `<!doctype html><html><head><meta charset="utf-8"><title>Al-Kausar Computer Institute · Kataf Academy Syllabus</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
 <style>${css}</style></head>`;
 
@@ -263,13 +266,16 @@ for (const emb of await out.embedPdf(bodySrc, bodySrc.getPageIndices())) {
 }
 await addAsIs(backPdf);
 const font = await out.embedFont(StandardFonts.Helvetica);
+const markImg = await out.embedPng(readFileSync("public/logo/alkausar-mark.png"));
 const pages = out.getPages();
 const total = pages.length;
 pages.forEach((p, i) => {
   if (i === 0 || i === total - 1) return;
   const { width } = p.getSize();
   const grey = rgb(0.42, 0.35, 0.28);
-  p.drawText("KATAF ACADEMY  -  SYLLABUS", { x: 45, y: 22, size: 7, font, color: grey });
+  const mh = 15;
+  p.drawImage(markImg, { x: 45, y: 17, width: mh * (640 / 345), height: mh });
+  p.drawText("AL-KAUSAR COMPUTER INSTITUTE  -  KATAF ACADEMY  -  SYLLABUS", { x: 45 + mh * (640 / 345) + 8, y: 22, size: 7, font, color: grey });
   const n = `${i + 1} / ${total}`;
   p.drawText(n, { x: width - 45 - font.widthOfTextAtSize(n, 7), y: 22, size: 7, font, color: grey });
 });

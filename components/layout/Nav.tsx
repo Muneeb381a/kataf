@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion, useScroll } from "framer-motion";
-import { Wordmark } from "@/components/ui/Logo";
+import { AcademyWordmark, Wordmark } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 
 export type NavVariant = "software" | "academy";
@@ -69,11 +69,10 @@ export function Nav({ variant = "software" }: { variant?: NavVariant }) {
       <div className="wrap flex h-16 items-center justify-between">
         <Link
           href={variant === "academy" ? "/academy" : "/"}
-          aria-label={variant === "academy" ? "Kataf Academy, home" : "Kataf, home"}
+          aria-label={variant === "academy" ? "Al-Kausar Computer Institute, Kataf Academy, home" : "Kataf, home"}
           className="flex items-center gap-3 text-ink"
         >
-          <Wordmark />
-          {variant === "academy" && <span className="label rounded bg-olive px-2 py-1 text-paper">Academy</span>}
+          {variant === "academy" ? <AcademyWordmark /> : <Wordmark />}
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-6 md:flex lg:gap-9">

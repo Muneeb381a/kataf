@@ -7,6 +7,7 @@ import { whatsappLink } from "@/lib/config";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { VerifyForm } from "@/components/sections/VerifyForm";
+import { AlKausarMark } from "@/components/ui/Logo";
 
 export const metadata: Metadata = {
   title: "Certificate check",
@@ -49,8 +50,9 @@ export default async function VerifyResult({ params }: { params: Promise<{ code:
             </div>
             <div className="lg:col-span-5">
               <div className="relative rounded border border-ink bg-paper shadow-frame">
-                <div className="border-b border-ink bg-olive-tint px-6 py-4">
-                  <p className="label text-olive-deep">Kataf Academy · Certificate of Completion</p>
+                <div className="flex items-center gap-4 border-b border-ink bg-olive-tint px-6 py-4">
+                  <AlKausarMark className="h-9 w-auto" />
+                  <p className="label text-olive-deep">Al-Kausar Computer Institute · Kataf Academy<br />Certificate of Completion</p>
                 </div>
                 <dl className="px-6">
                   {[

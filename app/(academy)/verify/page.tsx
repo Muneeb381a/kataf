@@ -3,6 +3,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Wheat } from "@/components/ui/Wheat";
 import { VerifyForm } from "@/components/sections/VerifyForm";
 import { CertificateArt } from "@/components/ui/CertificateArt";
+import { AlKausarLogo } from "@/components/ui/Logo";
 
 export const metadata: Metadata = {
   title: "Verify a certificate",
@@ -16,6 +17,7 @@ export default function VerifyPage() {
       <Wheat className="pointer-events-none absolute -right-6 -top-6 hidden h-[520px] rotate-[12deg] text-olive/15 lg:block" />
       <div className="wrap relative grid gap-14 lg:grid-cols-12 lg:gap-x-6">
         <div className="lg:col-span-6">
+          <AlKausarLogo className="mb-10 h-20 w-auto" />
           <SectionLabel>Certificate verification</SectionLabel>
           <h1 className="display max-w-[12ch]">Is this certificate real?</h1>
           <p className="mt-8 max-w-[44ch] text-muted">

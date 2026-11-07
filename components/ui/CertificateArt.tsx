@@ -1,4 +1,3 @@
-import { MARK_PATH } from "./Logo";
 import { site } from "@/lib/config";
 
 /** A sample certificate, drawn in code. Always labelled as a sample so nobody mistakes it for a real one. */
@@ -17,10 +16,11 @@ export function CertificateArt({ course = "Course name", className = "" }: { cou
       </text>
 
       {/* mark */}
-      <g transform="translate(222 42) scale(0.0283) translate(-70 -70)">
-        <path d={MARK_PATH} className="fill-olive" fillRule="evenodd" />
-      </g>
-      <text x="240" y="92" textAnchor="middle" className="fill-olive font-mono" fontSize="10" letterSpacing="3">
+      <image href="/logo/alkausar-mark.png" x="214" y="38" width="52" height="28" />
+      <text x="240" y="80" textAnchor="middle" className="fill-ink font-serif" fontSize="11.5" fontWeight="600" letterSpacing="1.5">
+        AL-KAUSAR COMPUTER INSTITUTE
+      </text>
+      <text x="240" y="93" textAnchor="middle" className="fill-olive font-mono" fontSize="7.5" letterSpacing="3">
         KATAF ACADEMY
       </text>
 
@@ -57,9 +57,7 @@ export function CertificateArt({ course = "Course name", className = "" }: { cou
       </text>
       <circle cx="240" cy="292" r="19" className="fill-olive" />
       <circle cx="240" cy="292" r="15" className="fill-none stroke-paper" strokeWidth="0.8" />
-      <g transform="translate(231 283) scale(0.0140) translate(-70 -70)">
-        <path d={MARK_PATH} className="fill-paper" fillRule="evenodd" />
-      </g>
+      <image href="/logo/alkausar-mark-light.png" x="230" y="285" width="20" height="10.8" />
     </svg>
   );
 }

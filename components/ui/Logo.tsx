@@ -19,3 +19,39 @@ export function Wordmark({ className = "", markClassName = "text-olive" }: { cla
     </span>
   );
 }
+
+/** Al-Kausar mark (the AK with the leaf). Two-colour artwork, so it keeps its own greens; `light` is for dark backgrounds. */
+export function AlKausarMark({ className = "h-10 w-auto", light = false }: { className?: string; light?: boolean }) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={light ? "/logo/alkausar-mark-light.png" : "/logo/alkausar-mark.png"}
+      alt=""
+      width={640}
+      height={345}
+      className={className}
+      aria-hidden="true"
+    />
+  );
+}
+
+/** Full Al-Kausar Computer Institute logo (mark, name and descriptor). */
+export function AlKausarLogo({ className = "h-24 w-auto", light = false, alt = "Al-Kausar Computer Institute" }: { className?: string; light?: boolean; alt?: string }) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={light ? "/logo/alkausar-light.png" : "/logo/alkausar.png"} alt={alt} width={1100} height={529} className={className} />
+  );
+}
+
+/** Academy header lockup: Al-Kausar mark, name, and the Kataf Academy line beneath. */
+export function AcademyWordmark({ className = "" }: { className?: string }) {
+  return (
+    <span className={`inline-flex items-center gap-3 ${className}`}>
+      <AlKausarMark className="h-9 w-auto" />
+      <span className="flex flex-col leading-none">
+        <span className="font-serif text-[23px] font-medium tracking-[-0.02em] text-[#033703]">Al-Kausar</span>
+        <span className="label mt-1 text-[10px] text-muted">Computer Institute · Kataf Academy</span>
+      </span>
+    </span>
+  );
+}

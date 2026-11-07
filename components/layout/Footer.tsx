@@ -2,7 +2,7 @@ import Link from "next/link";
 import { site, whatsappDisplay, whatsappLink } from "@/lib/config";
 import { products } from "@/lib/products";
 import { courses } from "@/lib/courses";
-import { Wordmark } from "@/components/ui/Logo";
+import { AlKausarLogo, Wordmark } from "@/components/ui/Logo";
 
 /** Software footer talks only about software; the academy footer only about courses. */
 export function Footer({ variant = "software" }: { variant?: "software" | "academy" }) {
@@ -11,8 +11,14 @@ export function Footer({ variant = "software" }: { variant?: "software" | "acade
     <footer className={`on-dark relative text-paper ${academy ? "bg-olive-deep" : "bg-ink"}`}>
       <div className="wrap grid gap-12 pb-10 pt-20 md:grid-cols-12">
         <div className="md:col-span-4">
-          <Wordmark className="text-paper" markClassName="text-wheat" />
-          {academy && <p className="label mt-3 text-wheat">Academy</p>}
+          {academy ? (
+            <>
+              <AlKausarLogo light className="h-24 w-auto" />
+              <p className="label mt-4 text-wheat">Kataf Academy</p>
+            </>
+          ) : (
+            <Wordmark className="text-paper" markClassName="text-wheat" />
+          )}
           <p className="mt-6 max-w-[34ch] text-paper/70">
             {academy
               ? "Kataf Academy teaches design, code, AI and marketing, with a certificate you can verify and an internship in every course."
@@ -78,7 +84,7 @@ export function Footer({ variant = "software" }: { variant?: "software" | "acade
       </div>
       <div className="wrap">
         <div className="label flex flex-col gap-2 border-t border-paper/20 py-6 text-paper/60 md:flex-row md:justify-between">
-          <span>© {new Date().getFullYear()} Kataf{academy ? " Academy" : ""}</span>
+          <span>© {new Date().getFullYear()} {academy ? "Al-Kausar Computer Institute · Kataf Academy" : "Kataf"}</span>
           <span>{site.city}</span>
         </div>
       </div>

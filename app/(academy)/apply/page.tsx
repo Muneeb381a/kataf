@@ -4,6 +4,7 @@ import { courses } from "@/lib/courses";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ApplyForm } from "@/components/sections/ApplyForm";
 import { WhatsAppIcon } from "@/components/layout/WhatsAppFloat";
+import { AlKausarLogo } from "@/components/ui/Logo";
 
 export const metadata: Metadata = {
   title: "Apply to the Academy",
@@ -29,6 +30,7 @@ export default async function ApplyPage({ searchParams }: { searchParams: Promis
 
         <div className="mt-14 grid gap-14 lg:mt-20 lg:grid-cols-12 lg:gap-x-6">
           <aside className="lg:col-span-4">
+            <AlKausarLogo className="mb-8 h-20 w-auto" />
             <ol className="border-t border-ink">
               {steps.map((s, i) => (
                 <li key={s.t} className="grid grid-cols-[3rem_1fr] border-b border-line py-5">
