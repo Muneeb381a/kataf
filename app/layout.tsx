@@ -33,11 +33,11 @@ const generalSans = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Kataf | Software house and Academy in Pakistan",
-    template: "%s | Kataf",
+    default: "Al-Kausar | Software house and Academy in Pakistan",
+    template: "%s | Al-Kausar",
   },
   description:
-    "Kataf builds Printing ERP, Installment Manager, Doctor ERP and custom software for Pakistani businesses, and teaches design, web development, AI and marketing at Kataf Academy.",
+    "Al-Kausar builds Printing ERP, Installment Manager, Doctor ERP and custom software for Pakistani businesses, and teaches design, web development, AI and marketing at Al-Kausar Computer Institute.",
   openGraph: {
     type: "website",
     siteName: site.name,
@@ -55,7 +55,7 @@ const orgLd = {
   "@type": ["Organization", "EducationalOrganization"],
   name: site.name,
   url: siteUrl,
-  logo: `${siteUrl}/logo/kataf.svg`,
+  logo: `${siteUrl}/logo/alkausar.png`,
   email: site.email,
   address: { "@type": "PostalAddress", addressLocality: site.city },
 };

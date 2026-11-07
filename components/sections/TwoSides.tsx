@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Wheat } from "@/components/ui/Wheat";
-import { LogoMark } from "@/components/ui/Logo";
+import { AlKausarMark } from "@/components/ui/Logo";
 import { courses } from "@/lib/courses";
 import { moduleCount, products } from "@/lib/products";
 
-/** Home: the two halves of Kataf side by side, joined at the seam. */
+/** Home: the two halves of Al-Kausar side by side, joined at the seam. */
 export function TwoSides() {
   return (
     <section className="relative grid lg:grid-cols-2">
@@ -15,7 +15,7 @@ export function TwoSides() {
         aria-hidden="true"
         className="absolute left-1/2 top-24 z-20 hidden h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full border border-ink bg-paper text-olive shadow-[4px_4px_0_#14130F] lg:flex"
       >
-        <LogoMark className="h-7 w-7" />
+        <AlKausarMark className="h-7 w-auto" />
       </div>
 
       {/* Build */}

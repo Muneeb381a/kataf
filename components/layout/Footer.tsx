@@ -14,21 +14,21 @@ export function Footer({ variant = "software" }: { variant?: "software" | "acade
           {academy ? (
             <>
               <AlKausarLogo light className="h-24 w-auto" />
-              <p className="label mt-4 text-wheat">Kataf Academy</p>
+              <p className="label mt-4 text-wheat">Academy</p>
             </>
           ) : (
-            <Wordmark className="text-paper" markClassName="text-wheat" />
+            <Wordmark light />
           )}
           <p className="mt-6 max-w-[34ch] text-paper/70">
             {academy
-              ? "Kataf Academy teaches design, code, AI and marketing, with a certificate you can verify and an internship in every course."
-              : "Kataf means harvest. We build software for the Pakistani businesses that do the hard work, and we want the fruit of it to reach them."}
+              ? "Al-Kausar Computer Institute teaches design, code, AI and marketing, with a certificate you can verify and an internship in every course."
+              : "We build software for the Pakistani businesses that do the hard work, and we want the fruit of it to reach them."}
           </p>
           <Link
             href={academy ? "/" : "/academy"}
             className="label mt-6 inline-block rounded border border-paper/40 px-3 py-2 transition-colors hover:bg-paper hover:text-ink"
           >
-            {academy ? "Kataf software house ↗" : "Kataf Academy ↗"}
+            {academy ? "Software house ↗" : "Academy ↗"}
           </Link>
         </div>
 
@@ -79,12 +79,12 @@ export function Footer({ variant = "software" }: { variant?: "software" | "acade
 
       <div className="wrap overflow-hidden" aria-hidden="true">
         <p className="select-none font-serif text-[clamp(120px,24vw,340px)] leading-[0.8] tracking-[-0.05em] text-paper/[0.06]">
-          {academy ? "Academy" : "Kataf"}
+          {academy ? "Academy" : "Al-Kausar"}
         </p>
       </div>
       <div className="wrap">
         <div className="label flex flex-col gap-2 border-t border-paper/20 py-6 text-paper/60 md:flex-row md:justify-between">
-          <span>© {new Date().getFullYear()} {academy ? "Al-Kausar Computer Institute · Kataf Academy" : "Kataf"}</span>
+          <span>© {new Date().getFullYear()} {academy ? "Al-Kausar Computer Institute" : "Al-Kausar"}</span>
           <span>{site.city}</span>
         </div>
       </div>
