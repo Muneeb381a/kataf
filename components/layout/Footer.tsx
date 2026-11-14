@@ -44,6 +44,7 @@ export function Footer({ variant = "software" }: { variant?: "software" | "acade
             <FooterCol title="Learn with us" className="md:col-span-2">
               <Link href="/academy#fees">Fees</Link>
               <Link href="/academy#internship">Internship</Link>
+              <Link href="/blog">Blog</Link>
               <Link href="/verify">Verify a certificate</Link>
               <Link href="/apply">Apply now</Link>
             </FooterCol>
@@ -62,6 +63,7 @@ export function Footer({ variant = "software" }: { variant?: "software" | "acade
               <Link href="/services#websites">Custom Websites</Link>
               <Link href="/products">Products</Link>
               <Link href="/work">Work</Link>
+              <Link href="/blog">Blog</Link>
               <Link href="/about">About</Link>
             </FooterCol>
           </>

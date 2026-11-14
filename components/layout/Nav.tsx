@@ -14,6 +14,7 @@ const software = {
     { href: "/products", label: "Products" },
     { href: "/services", label: "Services" },
     { href: "/work", label: "Work" },
+    { href: "/blog", label: "Blog" },
     { href: "/about", label: "About" },
     { href: "/academy", label: "Academy ↗" },
   ],

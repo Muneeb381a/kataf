@@ -12,7 +12,8 @@
     "cert:list": "node --env-file-if-exists=.env.local scripts/certificates.mjs list",
     "cert:revoke": "node --env-file-if-exists=.env.local scripts/certificates.mjs revoke",
     "syllabus": "node scripts/syllabus.mjs",
-    "forms": "node scripts/forms.mjs"
+    "forms": "node scripts/forms.mjs",
+    "flyer": "node scripts/flyer.mjs"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.4",
